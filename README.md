@@ -1,5 +1,3 @@
-<br />
-
 # Personal Link Hub (LinkTree Style)
 
 This repository contains my simple personal link hub: a single static HTML page that centralizes the most important links related to me (projects, social profiles, automation tools, etc.). It is intentionally lightweight, dependency‑free, and easy to customize.
