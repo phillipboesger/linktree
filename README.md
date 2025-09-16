@@ -1,47 +1,85 @@
-# Linktree Template
-### Presentation
-Hi there. How are you? Hope you're fine. 😁
+<br />
 
-In this repository, I would like to make available a website template for people who wants to share your's most important links in any social media. It's very customizable, so you are able to make any changes that you wants.
+# Personal Link Hub (LinkTree Style)
 
-If necessary, feel free for ask or suggest me about anything. Intend to monitor this repository every day.
+This repository contains my simple personal link hub: a single static HTML page that centralizes the most important links related to me (projects, social profiles, automation tools, etc.). It is intentionally lightweight, dependency‑free, and easy to customize.
 
-## 🎯 Website demo
-![Website Demo](https://github.com/vitor-antoni/linktree-template/blob/main/assets/gif-readme/gif-readme.gif)
+> Purpose: Provide a clean, fast, self‑hostable alternative to commercial link aggregation services.
 
+## ✨ Key Features
 
-## 💻 Somethings you can do
-The `index.html` can imports two differents snowfall effects, but you must choose between one of these. 
-> Don't use both at the same time, it might seem a little strange.
+- 100% static: just `index.html`, one CSS file, optional JavaScript effect.
+- Fast to load + privacy friendly (no analytics or trackers included by default).
+- Easily change links, icons, headings, and profile image directly in HTML.
+- Sub‑sections supported (see the "Automation" heading in the current layout).
+- Ambient animated starfield background (CSS only) or optional alternative snowfall effect.
 
-If you want to keep default effect, don't change the lines where are this code:
+## 📂 Structure
+
 ```
-<!-- Snowfall Background Animation -->
-<section class="animated-background">
-    <div id="stars1"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
-</section>
-<!-- End of Snowfall Background Animation -->
+index.html            # Main page
+assets/css/style.css  # Styling
+assets/js/snowfall.js # (Optional) alternative snowfall animation (currently commented out)
+assets/images/        # Profile image, logos, icons
+assets/gif-readme/    # Demo GIF (legacy / template origin)
 ```
 
-But, if you want, comment this code above. After commenting the code above, go to the end of `index.html`, you may see a code code like that: 
+## 🔧 Customization Guide
+
+### 1. Update Profile Image & Title
+
+In `index.html` locate:
+
 ```
-<!-- 
-A different snowfall 
-<script  src="snowfall.js"></script> 
--->
+<img class="display-image" ... src="assets/images/about-image.jpg" />
+<h2 class="page-title">Phillip Bösger</h2>
 ```
-Uncomment this code and press `ctrl+s` for see the updates in your website.
 
-## 📑 Additional Information
-This project was developed to contribute to the *open source* movement. Therefore, it doesn't have any complex code here.
+Replace the image file (keep the same filename or adjust the `src`). Keep images optimized (< ~300 KB) for faster load times.
 
-I liked this project so much that I used it to develop a website for myself. You can see it [clicking here](https://links.vitor-antoni.com.br).
+### 2. Add / Remove Links
 
-Furthermore, I must to give the credit to these people, that I got some pieces of code from their own projects to develop this.
+Each link block follows this pattern:
 
-[©️ johnggli](https://github.com/johnggli/linktree) <br>
-[©️ SamirPaul1](https://github.com/SamirPaul1/links)
+```
+<div class="page-item-wrap relative">
+    <div class="page-item flex-both-center absolute"></div>
+    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://example.com" data-type="page_item">
+        <img class="link-each-image" src="assets/images/icon.png" alt="Label" />
+        <span class="item-title text-center">Label</span>
+    </a>
+</div>
+```
 
-In case you are interested to follow or conected with me on LinkedIn, you can do it in this link: [LinkedIn](linkedin.com/in/vitor-silva-de-antoni/)
+Duplicate or remove blocks as needed. Keep `alt` text meaningful for accessibility.
+
+### 3. Section Headings
+
+To visually group related links you can add:
+
+```
+<h3 class="section-heading">Automation</h3>
+```
+
+Add more headings wherever logical.
+
+### 4. Icons & Images
+
+All images live in `assets/images/`. Reuse existing file names to avoid changing HTML, or update the `src` attributes. Recommended formats: PNG or WEBP with transparent background when suitable. Maintain consistent aspect ratios so buttons feel balanced.
+
+### 5. Styling
+
+Adjust global colors, fonts, spacing in `assets/css/style.css`. If you introduce additional utility classes, stay consistent with existing naming (`page-*`, `flex-*`, etc.).
+
+## 🚀 Usage / Deployment
+
+Because this is plain static content you can:
+
+- Open `index.html` directly in a browser (double‑click locally).
+- Host on any static platform (GitHub Pages, Netlify, Vercel, Cloudflare Pages, S3, your own Nginx, etc.).
+
+No build step, no dependencies, no Node.js required.
+
+## 📄 License
+
+Released under the MIT License. See `LICENSE` for details.

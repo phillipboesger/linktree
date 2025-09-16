@@ -379,6 +379,19 @@ body,html{
     object-fit:cover
 }
 
+/* Spezifische Behandlung für Logos mit abweichendem Seitenverhältnis */
+.link-each-image.logo-wide {
+    object-fit: contain;
+    background: #fff;
+    padding: 4px;
+}
+
+/* Optional größere Profilbilder */
+.display-image.profile-large {
+    width:120px;
+    height:120px;
+}
+
 .page-logo{
     position:absolute;
     bottom:32px;
@@ -1450,4 +1463,17 @@ body,html{
     to {
         transform: translateY(-2000px);
     }
+}
+
+/* Internal tool highlighting */
+/* Abschnittsüberschrift für gruppierte Links */
+.section-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px; /* wie .page-title */
+    font-weight: 700; /* wie .page-title */
+    color: #fff;
+    text-align: center;
+    margin: 48px 0 12px; /* etwas Luft nach oben */
+    text-decoration: underline;
+    text-underline-offset: 6px;
 }
