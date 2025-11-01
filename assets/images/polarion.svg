@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="modernGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3BA8F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E8BC0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle with gradient -->
+  <circle cx="100" cy="100" r="95" fill="url(#modernGrad)"/>
+
+  <!-- Modern Blog/Article Icon -->
+  <!-- Main document with modern rounded corners -->
+  <rect x="50" y="35" width="100" height="130" rx="12" fill="white" opacity="0.95"/>
+
+  <!-- Header bar (represents blog header/title area) -->
+  <rect x="50" y="35" width="100" height="35" rx="12" fill="#3BA8F1" opacity="0.3"/>
+  <rect x="50" y="35" width="100" height="12" rx="12" fill="#3BA8F1" opacity="0.5"/>
+
+  <!-- Title line -->
+  <rect x="65" y="50" width="70" height="8" rx="4" fill="white"/>
+
+  <!-- Content lines with modern spacing -->
+  <rect x="65" y="85" width="70" height="5" rx="2.5" fill="#3BA8F1" opacity="0.6"/>
+  <rect x="65" y="98" width="70" height="5" rx="2.5" fill="#3BA8F1" opacity="0.6"/>
+  <rect x="65" y="111" width="50" height="5" rx="2.5" fill="#3BA8F1" opacity="0.6"/>
+
+  <!-- Paragraph break -->
+  <rect x="65" y="130" width="70" height="5" rx="2.5" fill="#3BA8F1" opacity="0.6"/>
+  <rect x="65" y="143" width="60" height="5" rx="2.5" fill="#3BA8F1" opacity="0.6"/>
+
+  <!-- Modern accent elements - floating particles for tech/future feel -->
+  <circle cx="45" cy="90" r="3" fill="white" opacity="0.7"/>
+  <circle cx="155" cy="110" r="4" fill="white" opacity="0.6"/>
+  <circle cx="160" cy="70" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="40" cy="130" r="3.5" fill="white" opacity="0.5"/>
+
+  <!-- Subtle corner accent -->
+  <path d="M 135 155 L 150 155 L 150 140" fill="none" stroke="white" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+</svg>
