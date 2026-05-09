@@ -1,100 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link href="assets/css/style.css" rel="stylesheet">
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
-        <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png">
-        <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp">
-        <title>Phillip Bösger</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- Snowfall Background Animation -->
-        <section class="animated-background">
-            <div id="stars1"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-        </section>
-        <!-- End of Snowfall Background Animation -->
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+    <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png">
+    <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp">
+    <title>Phillip Bösger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <canvas id="network-canvas"></canvas>
 
-        <div class="min-h-full flex-h-center" id="background_div">
-            <input type="hidden" value="https://bio.link" id="app-url">
-                <input type="hidden" value="null" id="is-featured">
-                    <canvas id="bg-canvas" class="background-overlay"></canvas>
-                </input>
-            </input>
+    <div class="page">
+        <header class="brand-header">
+            <img src="assets/images/boesger-digital.png" alt="Bösger Digital" class="brand-logo">
+        </header>
 
-            <div class="mt-48 page-full-wrap relative ">
-                <input type="hidden" value="creator-page" id="page-type">
-                <img class="display-image m-auto" data-src="assets/images/about-image.jpg" src="assets/images/about-image.jpg" alt="Profilbild"/>
-                <h2 class="page-title page-text-color page-text-font mt-16 text-center">Phillip Bösger</h2>
-                       
-                <div class="mt-24">
-                    <h3 class="section-heading">Business</h3>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank"  class="page-item-each py-10 flex-both-center" href="https://digital.boesger.com" data-type="page_item">
-                            <img class="link-each-image" data-src="assets/images/boesger-digital.png" src="assets/images/boesger-digital.png" alt="Bösger Digital"/>
-                            <span class=" item-title text-center">Bösger Digital</span>
-                        </a>
-                    </div>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://polarion.boesger.com"
-                            data-type="page_item">
-                            <img class="link-each-image" data-src="assets/images/polarion.svg" src="assets/images/polarion.svg" alt="Polarion Blog" />
-                            <span class=" item-title text-center">Polarion Blog</span>
-                        </a>
-                    </div>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank"  class="page-item-each py-10 flex-both-center" href="https://www.linkedin.com/in/phillip-boesger-90691215a/" data-type="page_item">
-                            <img class="link-each-image" data-src="assets/images/linkedin.png" src="assets/images/linkedin.png" alt="LinkedIn"/>
-                            <span class=" item-title text-center">LinkedIn</span>
-                        </a>
-                    </div>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://github.com/phillipboesger"
-                            data-type="page_item">
-                            <img class="link-each-image" data-src="assets/images/github.png" src="assets/images/github.png" alt="GitHub" />
-                            <span class=" item-title text-center">GitHub</span>
-                        </a>
-                    </div>
-                    <h3 class="section-heading">Privat</h3>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank"  class="page-item-each py-10 flex-both-center" href="https://photography.boesger.com" data-type="page_item">
-                            <img class="link-each-image" data-src="assets/images/logo_photography.png" src="assets/images/logo_photography.png" alt="Photography"/>
-                            <span class=" item-title text-center">Bösger Photography</span>
-                        </a>
-                    </div>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank"  class="page-item-each py-10 flex-both-center" href="https://www.instagram.com/phillip.bo/" data-type="page_item">
-                            <img class="link-each-image" data-src="assets/images/instagram.png" src="assets/images/instagram.png" alt="Instagram"/>
-                            <span class=" item-title text-center">Instagram</span>
-                        </a>
-                    </div>
-                    <h3 class="section-heading">Automation</h3>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank"  class="page-item-each py-10 flex-both-center" href="https://n8n.boesger.com" data-type="page_item" rel="nofollow noopener">
-                            <img class="link-each-image" data-src="assets/images/n8n.png" src="assets/images/n8n.png" alt="n8n"/>
-                            <span class=" item-title text-center">n8n</span>
-                        </a>
-                    </div>
-                    <div class="page-item-wrap relative">
-                        <div class="page-item flex-both-center absolute"></div>
-                        <a target="_blank"  class="page-item-each py-10 flex-both-center" href="http://proxmox.boesger.com" data-type="page_item" rel="nofollow noopener">
-                            <img class="link-each-image" data-src="assets/images/proxmox-light.png" src="assets/images/proxmox-light.png" alt="Proxmox"/>
-                            <span class=" item-title text-center">Proxmox</span>
-                        </a>
-                    </div>                    
-                </div>                                                                                
+        <main class="card-shell">
+            <!-- Profile -->
+            <div class="profile">
+                <div class="avatar-ring">
+                    <img src="assets/images/about-image.jpg" alt="Phillip Bösger" class="avatar">
+                </div>
+                <h1 class="profile-name">Phillip Bösger</h1>
+                <p class="profile-tagline">MORE AI, LESS MANUAL WORK.</p>
             </div>
-        </div>
-    </body>
+
+            <!-- Links -->
+            <nav class="links">
+                <p class="section-label">Business</p>
+
+                <a href="https://digital.boesger.com" target="_blank" rel="noopener" class="link-card">
+                    <img src="assets/images/boesger-digital.png" alt="Bösger Digital">
+                    <span>Bösger Digital</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+                <a href="https://polarion.boesger.com" target="_blank" rel="noopener" class="link-card">
+                    <img src="assets/images/polarion.svg" alt="Polarion Blog">
+                    <span>Polarion Blog</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+                <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="link-card">
+                    <img src="assets/images/linkedin.png" alt="LinkedIn">
+                    <span>LinkedIn</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+                <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="link-card">
+                    <img src="assets/images/github.png" alt="GitHub">
+                    <span>GitHub</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+                <p class="section-label">Privat</p>
+
+                <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="link-card">
+                    <img src="assets/images/logo_photography.png" alt="Bösger Photography">
+                    <span>Bösger Photography</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+                <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="link-card">
+                    <img src="assets/images/instagram.png" alt="Instagram">
+                    <span>Instagram</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+                <p class="section-label">Automation</p>
+
+                <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="link-card">
+                    <img src="assets/images/n8n.png" alt="n8n">
+                    <span>n8n</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+
+                <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="link-card">
+                    <img src="assets/images/proxmox-light.png" alt="Proxmox">
+                    <span>Proxmox</span>
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                    </svg>
+                </a>
+            </nav>
+        </main>
+
+        <footer class="page-footer">
+            <p>© 2025 Phillip Bösger &middot; <span class="footer-brand">Bösger Digital</span></p>
+        </footer>
+    </div>
+
+    <script src="assets/js/network.js"></script>
+</body>
 </html>
