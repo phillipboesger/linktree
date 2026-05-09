@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0077cc"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="100%" stop-color="#ee00aa"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe066"/>
+      <stop offset="100%" stop-color="#ff9f1c"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6bffb8"/>
+      <stop offset="100%" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#041624"/>
+
+  <!-- Four color swatches arranged in a 2x2 grid with rounded corners -->
+  <rect x="10" y="10" width="19" height="19" rx="5" fill="url(#g1)"/>
+  <rect x="35" y="10" width="19" height="19" rx="5" fill="url(#g2)"/>
+  <rect x="10" y="35" width="19" height="19" rx="5" fill="url(#g3)"/>
+  <rect x="35" y="35" width="19" height="19" rx="5" fill="url(#g4)"/>
+
+  <!-- Center diamond overlap hint -->
+  <rect x="27" y="27" width="10" height="10" rx="2" fill="#020c18" opacity="0.7"/>
+  <rect x="29" y="29" width="6" height="6" rx="1.5" fill="white" opacity="0.15"/>
+</svg>
