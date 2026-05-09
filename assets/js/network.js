@@ -1,6 +1,8 @@
 (function () {
     var canvas = document.getElementById('network-canvas');
+    if (!canvas) return;
     var ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     var NODE_COUNT = 90;
     var MAX_DIST = 140;
