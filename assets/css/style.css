@@ -2,34 +2,43 @@
 
 :root {
     --bg:        #020c18;
-    --bg-card:   rgba(3, 18, 38, 0.55);
-    --bg-hover:  rgba(0, 35, 70, 0.75);
+    --bg-card:   rgba(3, 18, 38, 0.70);
+    --bg-hover:  rgba(0, 35, 70, 0.85);
     --cyan:      #00d4ff;
-    --cyan-dim:  rgba(0, 212, 255, 0.18);
-    --cyan-glow: rgba(0, 212, 255, 0.35);
     --blue:      #0077cc;
-    --border:    rgba(0, 212, 255, 0.18);
+    --border:    rgba(0, 212, 255, 0.20);
     --border-h:  rgba(0, 212, 255, 0.55);
     --text:      #ffffff;
     --text-dim:  #6ea8c8;
     --radius:    14px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-html, body {
-    min-height: 100vh;
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
     font-family: 'Inter', sans-serif;
     background: var(--bg);
+    background-image: radial-gradient(ellipse at 20% 10%, rgba(0,100,180,0.18) 0%, transparent 55%),
+                      radial-gradient(ellipse at 80% 90%, rgba(0,60,120,0.14) 0%, transparent 50%);
     color: var(--text);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
-/* ── Network canvas background ──────────────────────────────────────────── */
+/* ── Network canvas ──────────────────────────────────────────────────────── */
 #network-canvas {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -40,8 +49,15 @@ html, body {
 .page {
     position: relative;
     z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     min-height: 100vh;
     padding: 32px 16px 56px;
@@ -49,19 +65,18 @@ html, body {
 
 /* ── Brand header ────────────────────────────────────────────────────────── */
 .brand-header {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
+    display: block;
+    text-align: center;
 }
 
 .brand-logo {
-    height: 52px;
+    display: block;
+    height: 50px;
     width: auto;
-    max-width: 260px;
-    filter: drop-shadow(0 0 18px rgba(0, 212, 255, 0.45));
-    transition: filter 0.3s;
-}
-
-.brand-logo:hover {
-    filter: drop-shadow(0 0 28px rgba(0, 212, 255, 0.7));
+    max-width: 240px;
+    -webkit-filter: drop-shadow(0 0 14px rgba(0, 212, 255, 0.45));
+    filter: drop-shadow(0 0 14px rgba(0, 212, 255, 0.45));
 }
 
 /* ── Card shell ──────────────────────────────────────────────────────────── */
@@ -70,62 +85,66 @@ html, body {
     max-width: 500px;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 36px 28px 32px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow:
-        0 0 60px rgba(0, 212, 255, 0.06),
-        0 20px 60px rgba(0, 0, 0, 0.45);
+    border-radius: 22px;
+    padding: 34px 24px 30px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.55), 0 0 60px rgba(0, 212, 255, 0.05);
 }
 
 /* ── Profile ─────────────────────────────────────────────────────────────── */
 .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
 }
 
+/* Outer gradient ring – purely decorative border */
 .avatar-ring {
-    width: 110px;
-    height: 110px;
-    min-width: 110px;
-    min-height: 110px;
+    width: 116px;
+    height: 116px;
     border-radius: 50%;
-    padding: 3px;
     background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
-    box-shadow:
-        0 0 0 1px rgba(0,212,255,0.15),
-        0 0 32px rgba(0, 212, 255, 0.35),
-        0 0 64px rgba(0, 212, 255, 0.12);
+    padding: 3px;
+    box-shadow: 0 0 28px rgba(0, 212, 255, 0.40), 0 0 60px rgba(0, 212, 255, 0.12);
     margin-bottom: 18px;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
+}
+
+/* Inner clip circle – clips the <img> to a circle */
+.avatar-clip {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     overflow: hidden;
-    position: relative;
+    background: var(--bg);
 }
 
 .avatar {
-    position: absolute;
-    inset: 3px;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
-    border-radius: 50%;
-    object-fit: cover;
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .profile-name {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
     font-weight: 800;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
     color: var(--text);
     margin-bottom: 8px;
     text-align: center;
 }
 
 .profile-tagline {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -151,91 +170,88 @@ html, body {
 
 /* ── Links nav ───────────────────────────────────────────────────────────── */
 .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
 }
 
 /* ── Link cards ──────────────────────────────────────────────────────────── */
 .link-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 14px;
     padding: 13px 16px;
-    background: rgba(0, 212, 255, 0.04);
+    background: rgba(0, 212, 255, 0.05);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     text-decoration: none;
     color: var(--text);
     font-weight: 600;
     font-size: 0.95rem;
-    transition: border-color 0.22s, background 0.22s, box-shadow 0.22s, transform 0.22s;
-    position: relative;
-    overflow: hidden;
+    -webkit-transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, -webkit-transform 0.2s;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
-.link-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, rgba(0,212,255,0.08) 0%, transparent 55%);
-    opacity: 0;
-    transition: opacity 0.22s;
-    border-radius: var(--radius);
-}
-
-.link-card:hover {
+.link-card:hover,
+.link-card:active {
     background: var(--bg-hover);
     border-color: var(--border-h);
-    box-shadow:
-        0 0 20px rgba(0, 212, 255, 0.18),
-        0 6px 24px rgba(0, 0, 0, 0.35);
-    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 212, 255, 0.18), 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
-.link-card:hover::after {
-    opacity: 1;
-}
-
-.link-card:active {
-    transform: translateY(0);
+@media (hover: hover) {
+    .link-card:hover {
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
 }
 
 .link-card img {
+    display: block;
     width: 34px;
     height: 34px;
     object-fit: contain;
     border-radius: 8px;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
-    position: relative;
-    z-index: 1;
 }
 
 .link-card span {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
-    position: relative;
-    z-index: 1;
 }
 
 .link-card .arrow {
+    display: block;
     width: 17px;
     height: 17px;
     color: var(--cyan);
     opacity: 0.5;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-    transition: opacity 0.22s, transform 0.22s;
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .link-card:hover .arrow {
     opacity: 1;
-    transform: translate(2px, -2px);
 }
 
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 .page-footer {
-    margin-top: 32px;
+    margin-top: 28px;
     font-size: 0.74rem;
     color: rgba(110, 168, 200, 0.45);
     letter-spacing: 0.04em;
@@ -246,19 +262,28 @@ html, body {
     color: rgba(0, 212, 255, 0.45);
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────────── */
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
 @media (max-width: 540px) {
+    .page {
+        padding: 24px 12px 48px;
+    }
+
     .card-shell {
-        padding: 28px 18px 24px;
-        border-radius: 20px;
+        padding: 26px 16px 22px;
+        border-radius: 18px;
     }
 
     .profile-name {
-        font-size: 1.45rem;
+        font-size: 1.4rem;
     }
 
     .avatar-ring {
-        width: 96px;
-        height: 96px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .link-card {
+        font-size: 0.9rem;
+        padding: 12px 14px;
     }
 }
