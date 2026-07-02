@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-  <path fill="#00d4ff" d="M78 268q0-64 76-64h368q76 0 76 64 0 72-92 88-152 26-312 0-116-18-116-88z"/>
-  <path fill="#00d4ff" d="M562 258 606 226 606 296 562 288z"/>
-  <rect fill="#00d4ff" x="128" y="150" width="60" height="54" rx="8"/>
-  <rect fill="#00d4ff" x="200" y="150" width="60" height="54" rx="8"/>
-  <rect fill="#00d4ff" x="272" y="150" width="60" height="54" rx="8"/>
-  <rect fill="#00d4ff" x="344" y="150" width="60" height="54" rx="8"/>
-  <rect fill="#00d4ff" x="272" y="86" width="60" height="54" rx="8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#1D63ED"/>
+  <g fill="#ffffff">
+    <rect x="9" y="8" width="10" height="9" rx="1.5"/>
+    <rect x="21" y="8" width="10" height="9" rx="1.5"/>
+    <rect x="21" y="19" width="10" height="9" rx="1.5"/>
+    <rect x="33" y="19" width="10" height="9" rx="1.5"/>
+    <rect x="9" y="19" width="10" height="9" rx="1.5"/>
+    <path d="M6 30h46q6 0 6 8-2 4-9 6.5-14 5-30 3-13-2-15-10.5-1-4 2-7z"/>
+  </g>
 </svg>
