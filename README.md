@@ -1,73 +1,53 @@
-# Personal Link Hub (LinkTree Style)
+# boesger.com — Personal Branding Site
 
-This repository contains my simple personal link hub: a single static HTML page that centralizes the most important links related to me (projects, social profiles, automation tools, etc.). It is intentionally lightweight, dependency‑free, and easy to customize.
+This repository contains my personal branding site: a single static HTML page covering who I am, what I do (Polarion consulting, AI enablement, full-stack builds), what I've built, and a "Connect" hub centralizing all my other links (projects, social profiles, automation tools, etc.). It replaces the previous simple Linktree-style page — it's intentionally lightweight, dependency‑free, and easy to customize.
 
-> Purpose: Provide a clean, fast, self‑hostable alternative to commercial link aggregation services.
+> Purpose: One comprehensive, self‑hostable home for my brand — story + services + portfolio + every other link, instead of a bare list of buttons.
 
 ## ✨ Key Features
 
-- 100% static: just `index.html`, one CSS file, optional JavaScript effect.
+- 100% static: just `index.html`, one CSS file, two small JS files.
+- No build step, no framework, no Node.js — hand-authored HTML/CSS/vanilla JS.
 - Fast to load + privacy friendly (no analytics or trackers included by default).
-- Easily change links, icons, headings, and profile image directly in HTML.
-- Sub‑sections supported (see the "Automation" heading in the current layout).
-- Ambient animated starfield background (CSS only) or optional alternative snowfall effect.
+- Sticky nav with scroll-spy, mobile menu, and reveal-on-scroll animation.
+- Sections: Hero, About/CV, Services, Work & Portfolio, Blog teaser, Connect (all links), Contact.
+- Ambient animated network/constellation background (canvas, no dependencies) or optional alternative snowfall effect.
 
 ## 📂 Structure
 
 ```
-index.html            # Main page
-assets/css/style.css  # Styling
-assets/js/snowfall.js # (Optional) alternative snowfall animation (currently commented out)
-assets/images/        # Profile image, logos, icons
-assets/gif-readme/    # Demo GIF (legacy / template origin)
+index.html             # Main page (all sections)
+assets/css/style.css   # Styling + design tokens
+assets/js/network.js   # Animated network/constellation background
+assets/js/site.js      # Nav scroll-spy, mobile menu, reveal-on-scroll
+assets/js/snowfall.js  # (Optional) alternative snowfall animation (currently not loaded)
+assets/images/         # Profile photos, logos, product icons
+assets/gif-readme/     # Demo GIF (legacy / template origin)
 ```
 
 ## 🔧 Customization Guide
 
-### 1. Update Profile Image & Title
+### 1. Update Profile Photos
 
-In `index.html` locate:
-
-```
-<img class="display-image" ... src="assets/images/about-image.jpg" />
-<h2 class="page-title">Phillip Bösger</h2>
-```
-
-Replace the image file (keep the same filename or adjust the `src`). Keep images optimized (< ~300 KB) for faster load times.
+The hero uses `assets/images/about-image.jpeg` (portrait) and `assets/images/splitview.jpeg` (off-duty shot); the About section uses `assets/images/ai-layer.jpg`. Replace the files (keep the same filenames) or update the `src` attributes in `index.html`. Keep images optimized (< ~300 KB) for faster load times.
 
 ### 2. Add / Remove Links
 
-Each link block follows this pattern:
+**Connect section** (public link hub) — each entry follows the link-card pattern documented in `CLAUDE.md`. **Work & Portfolio** — each project is a `.glass-card.work-card` (see `CLAUDE.md` for the pattern). **Footer "Internal" row** — private/self-hosted tools use `rel="nofollow noopener"`.
 
-```
-<div class="page-item-wrap relative">
-    <div class="page-item flex-both-center absolute"></div>
-    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://example.com" data-type="page_item">
-        <img class="link-each-image" src="assets/images/icon.png" alt="Label" />
-        <span class="item-title text-center">Label</span>
-    </a>
-</div>
-```
-
-Duplicate or remove blocks as needed. Keep `alt` text meaningful for accessibility.
+Duplicate or remove blocks as needed. Keep `alt` text meaningful for accessibility. Only add real, verifiable content — see the "Data correctness" note in `CLAUDE.md`.
 
 ### 3. Section Headings
 
-To visually group related links you can add:
-
-```
-<h3 class="section-heading">Automation</h3>
-```
-
-Add more headings wherever logical.
+Sections use a `.kicker` + `<h2>` + intro `<p>` inside `.section-head`. Add new `<section class="section" id="...">` blocks and a matching nav pill in both the desktop and mobile nav to add a new page section.
 
 ### 4. Icons & Images
 
-All images live in `assets/images/`. Reuse existing file names to avoid changing HTML, or update the `src` attributes. Recommended formats: PNG or WEBP with transparent background when suitable. Maintain consistent aspect ratios so buttons feel balanced.
+All images live in `assets/images/`. Reuse existing file names to avoid changing HTML, or update the `src` attributes. Recommended formats: PNG or WEBP with transparent background when suitable. Maintain consistent aspect ratios so cards feel balanced.
 
 ### 5. Styling
 
-Adjust global colors, fonts, spacing in `assets/css/style.css`. If you introduce additional utility classes, stay consistent with existing naming (`page-*`, `flex-*`, etc.).
+Adjust global colors, spacing and typography via the CSS custom properties in `:root` in `assets/css/style.css` (see `CLAUDE.md` for the token table). If you introduce additional utility classes, stay consistent with existing naming (`hero-*`, `work-card-*`, `link-card`, etc.).
 
 ## 🚀 Usage / Deployment
 
