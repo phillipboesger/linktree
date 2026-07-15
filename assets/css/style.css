@@ -671,164 +671,6 @@ a:hover {
   z-index: 4;
 }
 
-/* ── About ───────────────────────────────────────────────────────────────── */
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
-  gap: 52px;
-  align-items: center;
-}
-.about-photo {
-  position: relative;
-  border-radius: 1.6rem;
-  overflow: hidden;
-  border: 1px solid rgba(113, 230, 255, 0.18);
-  box-shadow: var(--shadow-xl);
-  aspect-ratio: 5 / 6;
-}
-.about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.about-copy h2 {
-  margin: 16px 0 0;
-  color: #fff;
-  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
-}
-.about-copy > p {
-  margin: 18px 0 22px;
-  color: rgba(215, 238, 255, 0.88);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-.cv-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.cv-row {
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  gap: 18px;
-  padding: 16px 0;
-  border-top: 1px solid var(--border-subtle);
-}
-.cv-period {
-  color: var(--accent-glow);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding-top: 2px;
-}
-.cv-role {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-}
-.cv-org {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 3px;
-}
-.about-education {
-  margin: 14px 0 0;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-.about-ctas {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 26px;
-}
-
-/* ── Services ────────────────────────────────────────────────────────────── */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
-}
-.service-card {
-  height: 100%;
-  padding: 30px 28px;
-  display: flex;
-  flex-direction: column;
-}
-.service-index {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--accent-glow);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.service-card h3 {
-  margin: 14px 0 10px;
-  color: #fff;
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.service-card > p {
-  margin: 0 0 18px;
-  color: rgba(195, 222, 245, 0.82);
-  font-size: 0.97rem;
-  line-height: 1.65;
-}
-.service-points {
-  margin: auto 0 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.service-points li {
-  display: flex;
-  gap: 10px;
-  color: rgba(215, 238, 255, 0.9);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-.service-points svg {
-  flex-shrink: 0;
-  margin-top: 3px;
-  color: var(--accent);
-  width: 16px;
-  height: 16px;
-}
-.working-style {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-top: 28px;
-  padding: 20px 24px;
-  border-radius: var(--radius-md);
-  background: var(--surface-glass);
-  border: 1px solid var(--border-subtle);
-}
-.working-style-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 0.9rem;
-  color: var(--text-body);
-}
-.working-style-label {
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: var(--ls-label-sm);
-  text-transform: uppercase;
-  color: var(--accent-glow);
-}
-.services-cta {
-  text-align: center;
-  margin-top: 40px;
-}
-
 /* ── Work / Portfolio ────────────────────────────────────────────────────── */
 .work-grid {
   display: grid;
@@ -1081,7 +923,6 @@ a:hover {
     max-width: 380px;
     margin: 0 auto;
   }
-  .about-grid,
   .blog-grid {
     grid-template-columns: 1fr;
   }
@@ -1118,9 +959,5 @@ a:hover {
   .container {
     padding-left: 16px;
     padding-right: 16px;
-  }
-  .cv-row {
-    grid-template-columns: 1fr;
-    gap: 4px;
   }
 }

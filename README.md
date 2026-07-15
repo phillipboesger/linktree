@@ -1,8 +1,8 @@
 # boesger.com — Personal Branding Site
 
-This repository contains my personal branding site: a single static HTML page covering who I am, what I do (Polarion consulting, AI enablement, full-stack builds), what I've built, and a "Connect" hub centralizing all my other links (projects, social profiles, automation tools, etc.). It replaces the previous simple Linktree-style page — it's intentionally lightweight, dependency‑free, and easy to customize.
+This repository contains my personal hub/link-tree site: a single static HTML page showcasing what I've built (Work & Portfolio), a blog teaser, and a "Connect" hub centralizing all my other links (projects, social profiles, automation tools, etc.). It replaces the previous simple Linktree-style page — it's intentionally lightweight, dependency‑free, and easy to customize.
 
-> Purpose: One comprehensive, self‑hostable home for my brand — story + services + portfolio + every other link, instead of a bare list of buttons.
+> Purpose: A fast, self‑hostable routing hub for my brand — portfolio + every other link, instead of a bare list of buttons. It's deliberately thin: the full story (About Me, CV, Skills, Services) lives on `digital.boesger.com` and is only linked from here, not duplicated.
 
 ## ✨ Key Features
 
@@ -10,7 +10,7 @@ This repository contains my personal branding site: a single static HTML page co
 - No build step, no framework, no Node.js — hand-authored HTML/CSS/vanilla JS.
 - Fast to load + privacy friendly (no analytics or trackers included by default).
 - Sticky nav with scroll-spy, mobile menu, and reveal-on-scroll animation.
-- Sections: Hero, About/CV, Services, Work & Portfolio, Blog teaser, Connect (all links), Contact.
+- Sections: Hero, Work & Portfolio, Blog teaser, Connect (all links), Contact.
 - Ambient animated network/constellation background (canvas, no dependencies) or optional alternative snowfall effect.
 
 ## 📂 Structure
@@ -23,13 +23,16 @@ assets/js/site.js      # Nav scroll-spy, mobile menu, reveal-on-scroll
 assets/js/snowfall.js  # (Optional) alternative snowfall animation (currently not loaded)
 assets/images/         # Profile photos, logos, product icons
 assets/gif-readme/     # Demo GIF (legacy / template origin)
+cloudflare/tools-proxy/ # Optional Cloudflare Worker: mirrors product
+                         # subdomains under boesger.com/tools/<slug>
+                         # (separate deploy, see its own README)
 ```
 
 ## 🔧 Customization Guide
 
 ### 1. Update Profile Photos
 
-The hero uses `assets/images/about-image.webp` (in focus) and `assets/images/off-duty.webp` (off duty); the About section uses `assets/images/ai-layer.jpg`. Replace the files (keep the same filenames) or update the `src` attributes in `index.html`. Keep images optimized (< ~300 KB) for faster load times.
+The hero uses `assets/images/about-image.webp` (in focus) and `assets/images/off-duty.webp` (off duty). Replace the files (keep the same filenames) or update the `src` attributes in `index.html`. Keep images optimized (< ~300 KB) for faster load times.
 
 ### 2. Add / Remove Links
 
