@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
+    <meta
+      name="description"
+      content="Phillip Bösger — Polarion ALM expert, AI & full-stack developer. More AI, less manual work. Consulting, open-source Polarion tooling, and all my links in one place."
+    />
     <link
       rel="shortcut icon"
       href="assets/images/boesger-digital.png"
@@ -21,7 +25,7 @@
       href="assets/images/boesger-digital.png"
       type="image/webp"
     />
-    <title>Phillip Bösger</title>
+    <title>Phillip Bösger — Bösger Digital</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -32,333 +36,665 @@
     <canvas id="network-canvas"></canvas>
 
     <div class="page">
-      <header class="brand-header">
-        <img
-          src="assets/images/boesger-digital.png"
-          alt="Bösger Digital"
-          class="brand-logo"
-        />
+      <!-- Header / nav -->
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="#top" class="brand-logo-link">
+            <img
+              src="assets/images/boesger-digital.png"
+              alt="Bösger Digital"
+              class="brand-logo"
+            />
+          </a>
+
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="#about" class="nav-pill">About</a>
+            <a href="#services" class="nav-pill">Services</a>
+            <a href="#work" class="nav-pill">Work</a>
+            <a href="#blog" class="nav-pill">Blog</a>
+            <a href="#connect" class="nav-pill">Connect</a>
+          </nav>
+
+          <div class="nav-cta">
+            <a href="#contact" class="btn btn-primary btn-sm">Get in touch</a>
+            <button
+              class="nav-toggle"
+              id="nav-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-nav"
+              aria-label="Menü öffnen"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="#about" class="nav-pill">About</a>
+          <a href="#services" class="nav-pill">Services</a>
+          <a href="#work" class="nav-pill">Work</a>
+          <a href="#blog" class="nav-pill">Blog</a>
+          <a href="#connect" class="nav-pill">Connect</a>
+        </nav>
       </header>
 
-      <main class="card-shell">
-        <!-- Profile -->
-        <div class="profile">
-          <div class="avatar-ring">
-            <div class="avatar-clip">
-              <img
-                src="assets/images/about-image.jpeg"
-                alt="Phillip Bösger"
-                class="avatar"
-              />
+      <main>
+        <!-- Hero -->
+        <section class="hero" id="top" data-reveal>
+          <div>
+            <span class="kicker">AI-driven Polarion consulting</span>
+            <h1>More AI,<br />less manual work.</h1>
+            <p class="hero-sub">
+              I'm <strong>Phillip Bösger</strong> — 8 years of Polarion, from
+              Siemens enterprise to startup. I bridge the gap between
+              requirements management and technical execution. I don't just
+              consult. I build, and I build fast.
+            </p>
+            <div class="hero-ctas">
+              <a href="#contact" class="btn btn-primary btn-lg">Start a project</a>
+              <a href="#work" class="btn btn-secondary btn-lg">See what I build</a>
+              <a
+                href="https://www.linkedin.com/in/phillip-boesger-90691215a/"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-ghost btn-lg"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 11.001-4.121A2.06 2.06 0 015.34 7.43zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+                </svg>
+                LinkedIn
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <div class="stat-num">8+ yrs</div>
+                <div class="stat-label">with Polarion ALM</div>
+              </div>
+              <div>
+                <div class="stat-num">3+</div>
+                <div class="stat-label">open-source tools</div>
+              </div>
             </div>
           </div>
-          <h1 class="profile-name">Phillip Bösger</h1>
-          <p class="profile-tagline">MORE AI, LESS MANUAL WORK.</p>
-        </div>
 
-        <!-- Links -->
-        <nav class="links">
-          <p class="section-label">Business</p>
+          <div class="hero-visual">
+            <div class="hero-photo-a">
+              <img src="assets/images/about-image.webp" alt="Phillip Bösger" />
+              <span class="hero-photo-badge badge badge-neutral">In focus</span>
+            </div>
+            <div class="hero-photo-b">
+              <img src="assets/images/off-duty.webp" alt="Off duty" />
+              <span class="hero-photo-badge badge badge-neutral">Off duty</span>
+            </div>
+            <span class="hero-available badge badge-success">
+              <span class="badge-dot"></span>Available now · Remote across DACH
+            </span>
+          </div>
+        </section>
 
-          <a
-            href="https://digital.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/boesger-digital.png" alt="Bösger Digital" />
-            <span>Bösger Digital</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+        <!-- About -->
+        <section class="section" id="about">
+          <div class="section-inner about-grid">
+            <div class="about-photo" data-reveal>
+              <img src="assets/images/ai-layer.jpg" alt="AI-driven development" />
+            </div>
+            <div class="about-copy" data-reveal>
+              <span class="kicker">About me</span>
+              <h2>8 years of Polarion, from Siemens enterprise to startup.</h2>
+              <p>
+                I bridge the gap between requirements management and
+                technical execution — from Java extensions and REST
+                integrations to Velocity templates and CI/CD pipelines. By
+                deeply integrating AI into my daily workflow, I deliver
+                custom Polarion features at speed while raising the quality
+                of code, testing and documentation. Off duty, I work as a
+                digital nomad between Europe and Southeast Asia.
+              </p>
+              <div class="cv-list">
+                <div class="cv-row">
+                  <div class="cv-period">Jan 2026 – Present</div>
+                  <div>
+                    <div class="cv-role">Polarion Expert &amp; AI Developer</div>
+                    <div class="cv-org">Bösger Digital — Freelance, Germany (remote)</div>
+                  </div>
+                </div>
+                <div class="cv-row">
+                  <div class="cv-period">Nov 2020 – Dec 2025</div>
+                  <div>
+                    <div class="cv-role">ALM Consultant → Technical Development Lead → Senior Software Developer</div>
+                    <div class="cv-org">avasis Solutions GmbH, Nuremberg</div>
+                  </div>
+                </div>
+                <div class="cv-row">
+                  <div class="cv-period">Sep 2018 – Nov 2020</div>
+                  <div>
+                    <div class="cv-role">PLM Consultant</div>
+                    <div class="cv-org">Atos, Fürth — Siemens enterprise Polarion</div>
+                  </div>
+                </div>
+              </div>
+              <p class="about-education">
+                M.Sc. Computer Science, TH Nürnberg (2022) · B.Sc. Applied
+                Computer Science, DHBW Mannheim (2018)
+              </p>
+              <div class="about-ctas">
+                <a
+                  href="https://digital.boesger.com/CV_Polarion_Expert_EN.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-secondary btn-md"
+                  >Download CV (PDF)</a
+                >
+                <a href="#connect" class="btn btn-ghost btn-md">All my links</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-          <a
-            href="https://www.linkedin.com/in/phillip-boesger-90691215a/"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/linkedin.png" alt="LinkedIn" />
-            <span>LinkedIn</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+        <!-- Services -->
+        <section class="section section-tinted" id="services">
+          <div class="section-inner">
+            <div class="section-head" data-reveal>
+              <span class="kicker">Working with me</span>
+              <h2>Three ways to engage</h2>
+              <p>
+                All remote-first, all results-focused.
+              </p>
+            </div>
+            <div class="services-grid">
+              <div data-reveal>
+                <div class="glass-card service-card">
+                  <div class="service-index">Dev</div>
+                  <h3>Custom Polarion Development</h3>
+                  <p>
+                    You need a feature built. I take it from spec to
+                    production.
+                  </p>
+                  <ul class="service-points">
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      Java, REST API, Velocity templates, workflow rules
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      CI/CD pipelines with automated release docs
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      AI-assisted — same quality, faster delivery
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div data-reveal>
+                <div class="glass-card service-card">
+                  <div class="service-index">Enablement</div>
+                  <h3>Coaching &amp; AI Adoption</h3>
+                  <p>
+                    Your team has Polarion and isn't getting the ROI from
+                    it. I run hands-on assessments and coaching sprints
+                    that change that.
+                  </p>
+                  <ul class="service-points">
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      Workflow assessment — where you lose time
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      AI toolchain setup for daily Polarion work
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      Hands-on team coaching sprints
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div data-reveal>
+                <div class="glass-card service-card">
+                  <div class="service-index">Beyond</div>
+                  <h3>AI Development &amp; Transformation</h3>
+                  <p>
+                    Not everything is a Polarion problem. I bring my full
+                    development stack and AI know-how to wherever you need
+                    support.
+                  </p>
+                  <ul class="service-points">
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      Full-stack &amp; AI development, integrations
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      Custom AI agents &amp; workflow automation
+                    </li>
+                    <li>
+                      <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                      Senior engineering capacity, embedded in your team
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="working-style" data-reveal>
+              <div class="working-style-item">
+                <span class="working-style-label">Availability</span>
+                <span>Available now · up to 30h/week</span>
+              </div>
+              <div class="working-style-item">
+                <span class="working-style-label">Location</span>
+                <span>Remote · DACH · up to 20% on-site</span>
+              </div>
+              <div class="working-style-item">
+                <span class="working-style-label">Communication</span>
+                <span>Async-first, regular syncs on request</span>
+              </div>
+              <div class="working-style-item">
+                <span class="working-style-label">Languages</span>
+                <span>German · English</span>
+              </div>
+            </div>
+            <div class="services-cta" data-reveal>
+              <a
+                href="https://calendly.com/phillip-boesger/30min"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary btn-lg"
+                >Book a free 30-minute intro call</a
+              >
+            </div>
+          </div>
+        </section>
 
-          <a
-            href="https://github.com/phillipboesger"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/github.png" alt="GitHub" />
-            <span>GitHub</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+        <!-- Work / Portfolio -->
+        <section class="section" id="work">
+          <div class="section-inner">
+            <div class="section-head" data-reveal>
+              <span class="kicker">Work &amp; portfolio</span>
+              <h2>Things I build</h2>
+              <p>
+                A growing collection of AI agents, automations and Polarion
+                extensions — each a step toward less manual work and more AI
+                in Polarion.
+              </p>
+            </div>
+            <div class="work-grid">
+              <a
+                class="glass-card work-card"
+                href="https://digital.boesger.com"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/avacopilot.png" alt="" />
+                  <span class="badge badge-solid">Available</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>avaCopilot</h3>
+                  <p class="work-card-tagline">GenAI capabilities inside Polarion ALM</p>
+                  <p class="work-card-desc">
+                    An AI assistant for Polarion that turns repetitive ALM
+                    work into conversational, automated workflows.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Polarion</span>
+                    <span class="tag">GenAI</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
 
-          <a
-            href="https://colors.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/colors.png" alt="Bösger Colors" />
-            <span>Bösger Colors</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+              <a
+                class="glass-card work-card"
+                href="https://polarion-mcp.boesger.com"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/polarion-mcp.png" alt="" />
+                  <span class="badge badge-solid">Open Source</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Polarion MCP Server</h3>
+                  <p class="work-card-tagline">Copilot meets your backlog</p>
+                  <p class="work-card-desc">
+                    No more copy-pasting between Polarion and VS Code —
+                    connects GitHub Copilot directly to your work items.
+                    271 tools, zero switching.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">MCP</span>
+                    <span class="tag">Copilot</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
 
-          <p class="section-label">Polarion</p>
+              <a
+                class="glass-card work-card"
+                href="https://polarion.code.editor.boesger.com"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/polarion-code-editor.png" alt="" />
+                  <span class="badge badge-solid">Free Download</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Polarion Code Editor</h3>
+                  <p class="work-card-tagline">VS Code-style editing in Polarion</p>
+                  <p class="work-card-desc">
+                    Stop checking out. Edit Velocity macros, JSON and XML
+                    directly inside Polarion — no SVN client needed, powered
+                    by the Monaco Engine.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Monaco</span>
+                    <span class="tag">Open Source</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
 
-          <a
-            href="https://polarion.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/polarion.png" alt="Polarion Blog" />
-            <span>Polarion Blog</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+              <a
+                class="glass-card work-card"
+                href="https://polarion-docker.boesger.com"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/polarion-docker.png" alt="" />
+                  <span class="badge badge-solid">Open Source</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Polarion Docker</h3>
+                  <p class="work-card-tagline">Run Polarion ALM in containers</p>
+                  <p class="work-card-desc">
+                    Fully automated Dockerfile &amp; scripts that containerize
+                    a fresh Polarion install — zero manual effort, on macOS,
+                    Windows and Linux.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Open Source</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
 
-          <a
-            href="https://digital.boesger.com/ai-hub"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/ai-hub.png" alt="AI Hub" />
-            <span>AI Hub</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+              <a
+                class="glass-card work-card"
+                href="https://digital.boesger.com/ai-hub"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/ai-hub.png" alt="" />
+                  <span class="badge badge-solid">Growing</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>AI Enablement Hub</h3>
+                  <p class="work-card-tagline">AI coaching that empowers teams</p>
+                  <p class="work-card-desc">
+                    A growing AI coaching program built into my Polarion
+                    blog — created hand in hand with customers and
+                    continuously expanded.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">AI Coaching</span>
+                    <span class="tag">Enablement</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
 
-          <a
-            href="https://polarion-mcp.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/polarion-mcp.png" alt="Polarion MCP" />
-            <span>Polarion MCP</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+              <a
+                class="glass-card work-card"
+                href="https://polarion.boesger.com"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/polarion.png" alt="" />
+                  <span class="badge badge-solid">Active</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Sharing Knowledge with the Community</h3>
+                  <p class="work-card-tagline">The go-to blog for Polarion &amp; AI</p>
+                  <p class="work-card-desc">
+                    Practical tips, real-world customizations, CI/CD
+                    automation and hands-on AI agent experiments — shared
+                    freely.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Knowledge Sharing</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
 
-          <a
-            href="https://polarion-docker.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img
-              src="assets/images/polarion-docker.png"
-              alt="Polarion Docker"
-            />
-            <span>Polarion Docker</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+        <!-- Blog -->
+        <section class="section section-tinted" id="blog">
+          <div class="section-inner blog-grid">
+            <div data-reveal>
+              <span class="kicker">Polarion Blog</span>
+              <h2>The go-to blog for Polarion ALM &amp; AI</h2>
+              <p>
+                Practical tips, real customizations, CI/CD automation and AI
+                agent experiments — everything I learn shipping AI into
+                Polarion, written down.
+              </p>
+              <a
+                href="https://polarion.boesger.com"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-secondary btn-md"
+                >Read the blog →</a
+              >
+            </div>
+            <div data-reveal>
+              <div class="glass-panel blog-panel">
+                <p class="glass-panel-label">Stay in the loop</p>
+                <h3>No separate newsletter — yet</h3>
+                <p>
+                  New Polarion &amp; AI deep-dives get posted on the blog and
+                  shared on LinkedIn first. Follow along there.
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/phillip-boesger-90691215a/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-primary btn-md"
+                  >Follow on LinkedIn</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
 
-          <a
-            href="https://polarion.code.editor.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img
-              src="assets/images/polarion-code-editor.png"
-              alt="Polarion Code Editor"
-            />
-            <span>Polarion Code Editor</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+        <!-- Connect -->
+        <section class="section" id="connect">
+          <div class="section-inner">
+            <div class="section-head" data-reveal>
+              <span class="kicker">Connect</span>
+              <h2>Everything, in one place</h2>
+              <p>
+                All my public channels — business and personal. One hub
+                instead of a dozen tabs.
+              </p>
+            </div>
+            <div class="connect-grid" data-reveal>
+              <a
+                href="https://digital.boesger.com"
+                target="_blank"
+                rel="noopener"
+                class="link-card"
+              >
+                <img src="assets/images/boesger-icon.png" alt="" />
+                <span>Bösger Digital</span>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/phillip-boesger-90691215a/"
+                target="_blank"
+                rel="noopener"
+                class="link-card"
+              >
+                <img src="assets/images/linkedin.png" alt="" />
+                <span>LinkedIn</span>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/phillipboesger"
+                target="_blank"
+                rel="noopener"
+                class="link-card"
+              >
+                <img src="assets/images/github.png" alt="" />
+                <span>GitHub</span>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+              <a
+                href="https://colors.boesger.com"
+                target="_blank"
+                rel="noopener"
+                class="link-card"
+              >
+                <img src="assets/images/colors.png" alt="" />
+                <span>Bösger Colors</span>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+              <a
+                href="https://photography.boesger.com"
+                target="_blank"
+                rel="noopener"
+                class="link-card"
+              >
+                <img src="assets/images/logo_photography.png" alt="" />
+                <span>Bösger Photography</span>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/phillip.bo/"
+                target="_blank"
+                rel="noopener"
+                class="link-card"
+              >
+                <img src="assets/images/instagram.png" alt="" />
+                <span>Instagram</span>
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
 
-          <p class="section-label">Automation</p>
-
-          <a
-            href="https://n8n.boesger.com"
-            target="_blank"
-            rel="nofollow noopener"
-            class="link-card"
-          >
-            <img src="assets/images/n8n.png" alt="n8n" />
-            <span>n8n</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
-
-          <a
-            href="http://proxmox.boesger.com"
-            target="_blank"
-            rel="nofollow noopener"
-            class="link-card"
-          >
-            <img src="assets/images/proxmox-light.png" alt="Proxmox" />
-            <span>Proxmox</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
-
-          <p class="section-label">Privat</p>
-
-          <a
-            href="https://photography.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img
-              src="assets/images/logo_photography.png"
-              alt="Bösger Photography"
-            />
-            <span>Bösger Photography</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
-
-          <a
-            href="https://www.instagram.com/phillip.bo/"
-            target="_blank"
-            rel="noopener"
-            class="link-card"
-          >
-            <img src="assets/images/instagram.png" alt="Instagram" />
-            <span>Instagram</span>
-            <svg
-              class="arrow"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
-        </nav>
+        <!-- Contact -->
+        <section class="section" id="contact" style="padding-top: 24px">
+          <div class="section-inner">
+            <div class="contact-band" data-reveal>
+              <span class="kicker">Let's talk</span>
+              <h2>Let's cut the manual work</h2>
+              <p>
+                Polarion consulting, AI enablement, or a full-stack build —
+                tell me where your team is losing time.
+              </p>
+              <div class="hero-ctas">
+                <a
+                  href="https://calendly.com/phillip-boesger/30min"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-primary btn-lg"
+                  >Book a call</a
+                >
+                <a href="mailto:consulting@boesger.com" class="btn btn-secondary btn-lg"
+                  >Send an email</a
+                >
+                <a
+                  href="https://www.linkedin.com/in/phillip-boesger-90691215a/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost btn-lg"
+                  >Connect on LinkedIn</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <footer class="page-footer">
-        <p>
-          © <span id="footer-year"></span> Phillip Bösger &middot;
-          <span class="footer-brand">Bösger Digital</span>
-        </p>
+      <footer class="site-footer">
+        <div class="site-footer-main">
+          <div class="footer-brand-block">
+            <img
+              src="assets/images/boesger-digital.png"
+              alt="Bösger Digital"
+              class="brand-logo"
+            />
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <nav class="footer-nav" aria-label="Footer-Navigation">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <p class="footer-copy">
+            © <span id="footer-year"></span> Phillip Bösger · Bösger Digital
+          </p>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <span class="internal-label">Internal</span>
+            <a
+              href="https://n8n.boesger.com"
+              target="_blank"
+              rel="nofollow noopener"
+              class="internal-link"
+              title="n8n"
+            >
+              <img src="assets/images/n8n.png" alt="" />n8n
+            </a>
+            <a
+              href="http://proxmox.boesger.com"
+              target="_blank"
+              rel="nofollow noopener"
+              class="internal-link"
+              title="Proxmox"
+            >
+              <img src="assets/images/proxmox-light.png" alt="" />Proxmox
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
 
     <script src="assets/js/network.js"></script>
+    <script src="assets/js/site.js"></script>
     <script>
       document.getElementById("footer-year").textContent =
         new Date().getFullYear();
