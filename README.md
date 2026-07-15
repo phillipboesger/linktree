@@ -29,7 +29,7 @@ assets/gif-readme/     # Demo GIF (legacy / template origin)
 
 ### 1. Update Profile Photos
 
-The hero uses `assets/images/about-image.jpeg` (portrait) and `assets/images/splitview.jpeg` (off-duty shot); the About section uses `assets/images/ai-layer.jpg`. Replace the files (keep the same filenames) or update the `src` attributes in `index.html`. Keep images optimized (< ~300 KB) for faster load times.
+The hero uses `assets/images/about-image.webp` (in focus) and `assets/images/off-duty.webp` (off duty); the About section uses `assets/images/ai-layer.jpg`. Replace the files (keep the same filenames) or update the `src` attributes in `index.html`. Keep images optimized (< ~300 KB) for faster load times.
 
 ### 2. Add / Remove Links
 
