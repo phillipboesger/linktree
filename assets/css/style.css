@@ -735,6 +735,11 @@ a:hover {
   font-size: 0.9rem;
   margin-top: 3px;
 }
+.about-education {
+  margin: 14px 0 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
 .about-ctas {
   display: flex;
   gap: 12px;
@@ -759,6 +764,7 @@ a:hover {
   font-weight: 800;
   color: var(--accent-glow);
   letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 .service-card h3 {
   margin: 14px 0 10px;
@@ -793,6 +799,30 @@ a:hover {
   color: var(--accent);
   width: 16px;
   height: 16px;
+}
+.working-style {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+  padding: 20px 24px;
+  border-radius: var(--radius-md);
+  background: var(--surface-glass);
+  border: 1px solid var(--border-subtle);
+}
+.working-style-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+.working-style-label {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: var(--ls-label-sm);
+  text-transform: uppercase;
+  color: var(--accent-glow);
 }
 .services-cta {
   text-align: center;
