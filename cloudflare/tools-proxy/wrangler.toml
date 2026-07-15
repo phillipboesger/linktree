@@ -1,0 +1,11 @@
+name = "boesger-tools-proxy"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+
+# Requires the boesger.com zone to already be on this Cloudflare account
+# (it is — both boesger.com and digital.boesger.com are proxied through
+# Cloudflare already). `wrangler deploy` will create this route for you;
+# no changes needed in any of the proxied product repos.
+[[routes]]
+pattern = "boesger.com/tools/*"
+zone_name = "boesger.com"
