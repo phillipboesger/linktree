@@ -64,3 +64,7 @@ Marketing/bio copy on this site (years of experience, CV dates, stats, product s
 ## Images
 
 All icons/photos live in `assets/images/` (flat, no subfolders). Recommended formats: PNG or WEBP with transparent background for icons, JPEG for photos. Keep images under ~300 KB. Link card icons are displayed at `34×34 px`; work-card media icons are shown at up to `60px` tall.
+
+## Cache-busting
+
+`boesger.com` is proxied through Cloudflare, which caches `assets/css/style.css` and the `assets/js/*.js` files for **4 hours** (`Cache-Control: max-age=14400`) — and browsers cache them too. The filenames never change, so a plain deploy can leave visitors with stale CSS/JS paired against fresh HTML (new markup styled by old rules — this has happened, e.g. new-but-unstyled elements). `index.html` references these files with a `?v=YYYYMMDDx` query string; **bump that version string on every commit that changes `style.css`, `site.js`, or `network.js`** so the new URL bypasses both caches immediately. Grep for `?v=` in `index.html` to find and update all three references together.
