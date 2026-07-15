@@ -621,6 +621,60 @@ a:hover {
   letter-spacing: 0.02em;
 }
 
+.profile-callout {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 14px 18px;
+  max-width: 480px;
+  background: var(--surface-glass);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background var(--dur-base), border-color var(--dur-base),
+    transform var(--dur-base);
+}
+.profile-callout:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-strong);
+  transform: translateY(var(--lift-sm));
+}
+.profile-callout-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.profile-callout-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.profile-callout-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.profile-callout-desc {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+.profile-callout .arrow {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity var(--dur-base), transform var(--dur-base);
+}
+.profile-callout:hover .arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
 .hero-visual {
   position: relative;
   height: 440px;
