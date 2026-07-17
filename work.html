@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="Things Phillip Bösger builds — AI agents, automations and Polarion extensions. Polarion MCP Server, Polarion Docker, Polarion Code Editor, AI Enablement Hub and more."
+    />
+    <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png" />
+    <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <title>Projects &amp; Portfolio — Phillip Bösger</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css?v=20260717a" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="network-canvas"></canvas>
+
+    <div class="page">
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="index.html" class="brand-logo-link">
+            <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+          </a>
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="index.html" class="nav-pill">Home</a>
+            <a href="profile.html" class="nav-pill">Profile</a>
+            <a href="work.html" class="nav-pill is-active">Projects</a>
+            <a href="blog.html" class="nav-pill">Blog</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-primary btn-sm">Get in touch</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="index.html" class="nav-pill">Home</a>
+          <a href="profile.html" class="nav-pill">Profile</a>
+          <a href="work.html" class="nav-pill is-active">Projects</a>
+          <a href="blog.html" class="nav-pill">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="page-head centered" data-reveal>
+          <span class="kicker">Projects &amp; Portfolio</span>
+          <h1>What I build</h1>
+          <p>
+            A growing collection of things I build, from AI agents and
+            automations to Polarion extensions. Each is a step toward
+            <strong style="color: #fff; font-weight: 600">less manual work and more AI in Polarion</strong>.
+          </p>
+        </div>
+
+        <section class="section" style="padding-top: 32px">
+          <div class="section-inner">
+            <div class="work-grid">
+              <a
+                class="glass-card work-card"
+                href="https://www.avasis.biz/de/events/digital-blink-avacopilot-23-4-26"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/avacopilot.png" alt="" />
+                  <span class="badge badge-solid">Available</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>avaCopilot</h3>
+                  <p class="work-card-tagline">GenAI capabilities inside Polarion ALM</p>
+                  <p class="work-card-desc">
+                    An AI assistant for Polarion that turns repetitive ALM
+                    work into conversational, automated workflows.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Polarion</span>
+                    <span class="tag">GenAI</span>
+                    <span class="tag">Automation</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
+
+              <a class="glass-card work-card" href="work/polarion-mcp.html" data-reveal>
+                <div class="work-card-media">
+                  <img src="assets/images/polarion-mcp.png" alt="" />
+                  <span class="badge badge-solid">Open Source</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Polarion MCP Server</h3>
+                  <p class="work-card-tagline">Copilot meets your backlog</p>
+                  <p class="work-card-desc">
+                    No more copy-pasting between Polarion and VS Code —
+                    connects GitHub Copilot directly to your work items.
+                    271 tools, zero switching.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">MCP</span>
+                    <span class="tag">AI Integration</span>
+                    <span class="tag">Open Source</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
+
+              <a class="glass-card work-card" href="work/polarion-code-editor.html" data-reveal>
+                <div class="work-card-media">
+                  <img src="assets/images/polarion-code-editor.png" alt="" />
+                  <span class="badge badge-solid">Free Download</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Polarion Code Editor</h3>
+                  <p class="work-card-tagline">VS Code-style editing in Polarion</p>
+                  <p class="work-card-desc">
+                    Stop checking out. Edit Velocity macros, JSON and XML
+                    directly inside Polarion — no SVN client needed, powered
+                    by the Monaco Engine.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Monaco</span>
+                    <span class="tag">Polarion</span>
+                    <span class="tag">Open Source</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
+
+              <a class="glass-card work-card" href="work/polarion-docker.html" data-reveal>
+                <div class="work-card-media">
+                  <img src="assets/images/polarion-docker.png" alt="" />
+                  <span class="badge badge-solid">Open Source</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Polarion Docker</h3>
+                  <p class="work-card-tagline">Run Polarion ALM in containers</p>
+                  <p class="work-card-desc">
+                    Fully automated Dockerfile &amp; scripts that containerize
+                    a fresh Polarion install — zero manual effort, on macOS,
+                    Windows and Linux.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Polarion</span>
+                    <span class="tag">Open Source</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
+
+              <a class="glass-card work-card" href="work/ai-enablement-hub.html" data-reveal>
+                <div class="work-card-media">
+                  <img src="assets/images/ai-hub.png" alt="" />
+                  <span class="badge badge-solid">Growing</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>AI Enablement Hub</h3>
+                  <p class="work-card-tagline">AI coaching that empowers teams</p>
+                  <p class="work-card-desc">
+                    A growing AI coaching program built into my Polarion
+                    blog — created hand in hand with customers and
+                    continuously expanded.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">AI Coaching</span>
+                    <span class="tag">Enablement</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
+
+              <a
+                class="glass-card work-card"
+                href="https://polarion.boesger.com"
+                target="_blank"
+                rel="noopener"
+                data-reveal
+              >
+                <div class="work-card-media">
+                  <img src="assets/images/polarion.png" alt="" />
+                  <span class="badge badge-solid">Active</span>
+                </div>
+                <div class="work-card-body">
+                  <h3>Sharing Knowledge with the Community</h3>
+                  <p class="work-card-tagline">The go-to blog for Polarion &amp; AI</p>
+                  <p class="work-card-desc">
+                    Practical tips, real-world customizations, CI/CD
+                    automation and hands-on AI agent experiments — shared
+                    freely.
+                  </p>
+                  <div class="work-card-tags">
+                    <span class="tag">Knowledge Sharing</span>
+                    <span class="tag">AI Agents</span>
+                  </div>
+                  <span class="work-card-link">Learn more →</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo-link">
+              <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+            </a>
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="automation.html" class="footer-pill-link">Automation</a>
+              <a href="colors.html" class="footer-pill-link">
+                <img src="assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
+            <a href="https://digital.boesger.com/imprint/" target="_blank" rel="noopener" class="footer-legal-link">Imprint / Legal Disclosure</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/network.js?v=20260717a"></script>
+    <script src="assets/js/site.js?v=20260717a"></script>
+    <script>
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>

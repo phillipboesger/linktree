@@ -4,20 +4,31 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-A fully static personal hub/link-tree site for Phillip Bösger (Bösger Digital) — hero, work/portfolio, blog teaser, and a "Connect" link hub. There is no build system, no package manager, and no Node.js — no React/JSX, everything is hand-authored HTML/CSS/vanilla JS. To preview locally, open `index.html` directly in a browser (or serve the folder statically). Deployment to GitHub Pages happens automatically on every push to `main` via `.github/workflows/updateWebsite.yml`.
+A fully static personal hub site for Phillip Bösger (Bösger Digital) — hero, full profile (CV/skills/about/services), work/portfolio with per-project detail pages, blog teaser, colors & automation showcases, a compact links page, and contact. There is no build system, no package manager, and no Node.js — no React/JSX, everything is hand-authored HTML/CSS/vanilla JS. To preview locally, open any `.html` file directly in a browser (or serve the folder statically). Deployment to GitHub Pages happens automatically on every push to `main` via `.github/workflows/updateWebsite.yml`.
 
-This repo is the canonical `boesger.com` root, and it is deliberately a **thin routing/hub page**, not a content duplicate of the other properties. `digital.boesger.com` (Hugo site) is the full-depth site — About Me, CV, Skills, Working With Me/Services — and stays the source of truth for that content; boesger.com only links to it, it does not re-host it. Other Bösger properties (`polarion.boesger.com`, `colors.boesger.com`, `photography.boesger.com`, product subdomains like `polarion-mcp.boesger.com`) are likewise separate deployments/repos and are **not** managed here — this site links out to all of them (Work section + Connect section + footer) so every page stays reachable from one place, rather than folding their content into this repo. Do not re-add a full About/CV/Services section here — that content lives on digital.boesger.com and was deliberately removed from this site to avoid two sources of truth.
+This repo is the canonical `boesger.com` root. As of the July 2026 redesign it is the **full personal hub**, including the profile/CV/skills/services content that a previous iteration of this repo deliberately kept off boesger.com in favor of `digital.boesger.com`. That "thin hub, single source of truth on digital.boesger.com" policy has been superseded — `profile.html` here is now the canonical, self-hosted profile. `digital.boesger.com` (Hugo site) remains a separate deployment and is linked as one more property (e.g. via the Connect grid / footer), not treated as authoritative for CV/About content anymore. Other Bösger properties (`polarion.boesger.com`, `colors.boesger.com`, `photography.boesger.com`, product subdomains like `polarion-mcp.boesger.com`) are likewise separate deployments/repos and are **not** managed here; `colors.html` and `automation.html` in this repo are lightweight in-site *teasers* for `colors.boesger.com` and the n8n/Proxmox homelab (a handful of swatches / cards with an explicit link out to the full external site) — they don't attempt to re-host those properties' full content.
 
 `cloudflare/tools-proxy/` is a separate, optionally-deployed Cloudflare Worker that reverse-proxies select product subdomains under `boesger.com/tools/<slug>` (see its README) — it is not part of the static site build/deploy and requires a manual `wrangler deploy` or dashboard setup.
 
 ## Architecture
 
-The page is a single `index.html` backed by one CSS file and two JS files:
+A multi-page static site sharing one CSS file and two core JS files. There is no server-side routing or client-side SPA framework — every page is a real, independently-loadable `.html` file; navigation is plain `<a href>` between them.
 
-- **`index.html`** — All content lives here: sticky nav, hero, work/portfolio, blog teaser, connect (link hub), contact CTA, and footer (incl. a discreet "Internal" row for private tools). The footer year is set by an inline `<script>` at the bottom.
-- **`assets/css/style.css`** — All styling. Design tokens (colors, spacing, radii, shadows, motion, typography) are CSS custom properties in `:root`, ported from the Bösger Digital design system (canonical source: colors.boesger.com). Responsive breakpoints: `900px` (nav collapses to a mobile menu, hero/blog grids stack), `640px`/`560px` (spacing and CTA adjustments).
-- **`assets/js/network.js`** — An IIFE that draws an animated particle-network on `<canvas id="network-canvas">`, rendered behind all content at `z-index: 0`.
-- **`assets/js/site.js`** — An IIFE handling sticky-header background on scroll, nav scroll-spy (active section highlighting), the mobile menu toggle, and reveal-on-scroll (`[data-reveal]` + `IntersectionObserver`, respects `prefers-reduced-motion`).
+**Pages** (root level unless noted):
+- **`index.html`** — Home: sticky nav, hero, work/portfolio grid (teaser of `work.html`), blog band (teaser of `blog.html`), Connect link grid, contact CTA band, footer.
+- **`profile.html`** — Overview / CV / Skills / Working-with-me / About, switched via the tab-bar pattern (see below). Includes the downloadable CV PDF and the skills-grid detail modal.
+- **`work.html`** — Full projects/portfolio grid (same card pattern as Home's, but standalone with intro copy).
+- **`work/polarion-mcp.html`, `work/polarion-docker.html`, `work/polarion-code-editor.html`, `work/ai-enablement-hub.html`** — Per-project detail pages: hero, stat tiles, feature grid, "see it in action" media carousel (where applicable), setup steps, compatibility table, install-command tabs, CTA band. Relative asset paths from this folder go up one level (`../assets/...`).
+- **`blog.html`** — Blog topic cards + newsletter CTA (teases the live blog at polarion.boesger.com; posts are not authored here).
+- **`colors.html`** — Brand color swatches teaser, links out to colors.boesger.com for the full reference.
+- **`automation.html`** — n8n / Proxmox homelab showcase cards (external links to the actual tools).
+- **`links.html`** — Compact, single-column link-in-bio page (all Connect links in one lightweight list — this is the URL to use as an Instagram/social bio link).
+- **`contact.html`** — LinkedIn / Email / Book-a-call contact cards.
+
+**Shared assets:**
+- **`assets/css/style.css`** — All styling for every page. Design tokens (colors, spacing, radii, shadows, motion, typography) are CSS custom properties in `:root`, ported from the Bösger Digital design system (canonical source: colors.boesger.com). Responsive breakpoints: `900px` (nav collapses to a mobile menu, hero/blog grids stack), `640px`/`560px` (spacing and CTA adjustments).
+- **`assets/js/network.js`** — An IIFE that draws an animated particle-network on `<canvas id="network-canvas">`, rendered behind all content at `z-index: 0`. Loaded on every page.
+- **`assets/js/site.js`** — An IIFE handling sticky-header background on scroll, the mobile menu toggle, reveal-on-scroll (`[data-reveal]` + `IntersectionObserver`, respects `prefers-reduced-motion`), the generic tab-bar component (`[data-tabs]`, used by Profile's tabs and the product pages' install-command tabs), the skill-detail modal (Profile → Skills), and the product media carousel (`[data-carousel]`). Loaded on every page. Nav "active page" state is set statically per page (`.nav-pill.is-active` in the HTML) — there is no cross-page scroll-spy.
 - **`assets/js/snowfall.js`** — An alternative snowfall animation (currently **not loaded**). It targets `#bg-canvas` (which does not exist in the current HTML) and bundles a minified copy of Underscore.js. It can be enabled by swapping the canvas ID and script tag.
 
 ## CSS Custom Properties
@@ -35,6 +46,9 @@ All theme values are in `:root` in `style.css`. Key tokens:
 | `--shadow-sm` … `--shadow-xl` / `--glow-accent` | Elevation + cyan glow shadows |
 | `--space-2` … `--space-8` | 4px-base spacing scale |
 | `--container` | Max content width (`1024px`) |
+| `--font-mono` | Monospace stack (Fira Code / SF Mono) for code blocks and product-name display type |
+| `--text-link` / `--text-link-hover` | Default link color states |
+| `--warning` | Amber status text (e.g. install notes) |
 
 Legacy aliases (`--bg`, `--cyan`, `--blue`, `--border`, `--text`, `--radius`, …) are kept mapped to the new tokens for backward compatibility — prefer the new names above in new code.
 
@@ -51,11 +65,26 @@ Legacy aliases (`--bg`, `--cyan`, `--blue`, `--border`, `--text`, `--radius`, �
 </a>
 ```
 
-For links to private/internal services, use `rel="nofollow noopener"` and place them in the footer's `.site-footer-internal` row (`.internal-link`) instead of the public Connect grid — see the n8n/Proxmox entries.
+For links to private/internal services, use `rel="nofollow noopener"` and place them in the footer's "Internal" column (`.footer-pill-link`, alongside the public "Elsewhere" column) instead of the public Connect grid — see the n8n/Proxmox entries. The bottom bar below both columns (`.site-footer-internal` / `.site-footer-internal-inner`) holds only the copyright line and the Imprint link.
 
-**Work/portfolio card pattern** (`.glass-card.work-card`): an `<a>` wrapping a `.work-card-media` (icon + status `.badge`) and `.work-card-body` (`h3`, tagline, description, `.tag` chips, "Learn more →" link). Only add cards for things that are actually live/real — this section has previously contained AI-fabricated placeholder products; verify against the real product site or GitHub repo before adding one.
+**Work/portfolio card pattern** (`.glass-card.work-card`): an `<a>` wrapping a `.work-card-media` (icon + status `.badge`) and `.work-card-body` (`h3`, tagline, description, `.tag` chips, "Learn more →" link). Only add cards for things that are actually live/real — this section has previously contained AI-fabricated placeholder products; verify against the real product site or GitHub repo before adding one. Cards for projects with a detail page (see `work/*.html` above) link internally instead of to the external product site.
 
 **Section pattern**: `<section class="section" id="...">` (add `.section-tinted` for the alternating background band), with a `.section-head` (`.kicker` + `h2` + intro `p`) at the top.
+
+**Tab bar pattern** (Profile tabs, product install-command tabs — driven by `site.js`, no per-page JS needed):
+```html
+<div class="tabbar" data-tabs="profile">
+  <button type="button" class="tab-pill is-active" data-tab-target="overview">Overview</button>
+  <button type="button" class="tab-pill" data-tab-target="cv">CV</button>
+</div>
+<div class="tab-panel is-active" data-tab-panel="overview" data-tabs-group="profile">...</div>
+<div class="tab-panel" data-tab-panel="cv" data-tabs-group="profile">...</div>
+```
+If a panel's id should be deep-linkable, add `data-tab-hash="cv"` to its trigger button — `site.js` reads `location.hash` on load and syncs it on click.
+
+**Skill modal pattern** (Profile → Skills grid): each skill card is `<button class="skill-card" data-skill-modal>` wrapping a hidden `.skill-detail` block (icon markup, name, short desc, long detail paragraph) that `site.js` clones into the shared `#skill-modal` on click — content lives once, in HTML, not duplicated into JS.
+
+**Media carousel pattern** (product "see it in action" section): a wrapper with `data-carousel`, one `.carousel-slide` per screenshot/GIF (`.is-active` on the first), and `.carousel-dot` / `.carousel-prev` / `.carousel-next` controls — `site.js` handles the rest.
 
 ## Data correctness
 
@@ -63,8 +92,14 @@ Marketing/bio copy on this site (years of experience, CV dates, stats, product s
 
 ## Images
 
-All icons/photos live in `assets/images/` (flat, no subfolders). Recommended formats: PNG or WEBP with transparent background for icons, JPEG for photos. Keep images under ~300 KB. Link card icons are displayed at `34×34 px`; work-card media icons are shown at up to `60px` tall.
+All icons/photos live in `assets/images/` (flat, no subfolders). Recommended formats: PNG or WEBP with transparent background for icons, JPEG for photos. Keep images under ~300 KB. Link card icons are displayed at `34×34 px`; work-card media icons are shown at up to `60px` tall. Non-image documents (e.g. the downloadable CV) live in `assets/documents/`.
+
+Skill-grid icons on `profile.html` reference small third-party icon CDNs (simpleicons.org, DuckDuckGo/Google favicon services, iconify.design) instead of local files, matching the design handoff — these are utility favicons, not brand photography, so hot-linking them is an acceptable exception to "images live locally." Prefer a local asset in `assets/images/` when one already exists for that brand (GitHub, n8n, Docker, etc.).
 
 ## Cache-busting
 
-`boesger.com` is proxied through Cloudflare, which caches `assets/css/style.css` and the `assets/js/*.js` files for **4 hours** (`Cache-Control: max-age=14400`) — and browsers cache them too. The filenames never change, so a plain deploy can leave visitors with stale CSS/JS paired against fresh HTML (new markup styled by old rules — this has happened, e.g. new-but-unstyled elements). `index.html` references these files with a `?v=YYYYMMDDx` query string; **bump that version string on every commit that changes `style.css`, `site.js`, or `network.js`** so the new URL bypasses both caches immediately. Grep for `?v=` in `index.html` to find and update all three references together.
+`boesger.com` is proxied through Cloudflare, which caches `assets/css/style.css` and the `assets/js/*.js` files for **4 hours** (`Cache-Control: max-age=14400`) — and browsers cache them too. The filenames never change, so a plain deploy can leave visitors with stale CSS/JS paired against fresh HTML (new markup styled by old rules — this has happened, e.g. new-but-unstyled elements). Every HTML page references these files with the same `?v=YYYYMMDDx` query string; **bump that version string on every commit that changes `style.css`, `site.js`, or `network.js`, across every `.html` page, not just `index.html`** so the new URL bypasses both caches immediately everywhere. Grep for `?v=` across the repo (`grep -rn '?v=' --include='*.html'`) to find and update every reference together.
+
+## Data correctness — redesign-specific note
+
+The July 2026 redesign (Profile/CV/Skills/product-detail content) was ported from a Claude Design mockup the site owner authored describing their own career/products. It was implemented largely verbatim on the owner's authority, but per the rule above it has **not** been independently fact-checked against LinkedIn/GitHub/etc. — specific dates, GPA figures, certifications, and product stats (e.g. "271 REST operations", pricing) should be spot-checked against source before treating them as permanently correct if they're ever queried or challenged.

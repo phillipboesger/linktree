@@ -8,7 +8,7 @@
     />
     <meta
       name="description"
-      content="Phillip Bösger — Polarion ALM expert, AI & full-stack developer. More AI, less manual work. Consulting, open-source Polarion tooling, and all my links in one place."
+      content="Phillip Bösger — Polarion ALM expert, AI & full-stack developer. More AI, less manual work. Profile, consulting, open-source Polarion tooling, and all my links in one place."
     />
     <link
       rel="shortcut icon"
@@ -27,10 +27,10 @@
     />
     <title>Phillip Bösger — Bösger Digital</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="assets/css/style.css?v=20260715c" rel="stylesheet" />
+    <link href="assets/css/style.css?v=20260717a" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -39,7 +39,7 @@
       <!-- Header / nav -->
       <header class="site-header" id="site-header">
         <div class="site-header-inner">
-          <a href="#top" class="brand-logo-link">
+          <a href="index.html" class="brand-logo-link">
             <img
               src="assets/images/boesger-digital-wordmark.png"
               alt="Bösger Digital"
@@ -48,20 +48,14 @@
           </a>
 
           <nav class="site-nav" aria-label="Hauptnavigation">
-            <a
-              href="https://digital.boesger.com"
-              target="_blank"
-              rel="noopener"
-              class="nav-pill"
-              >Profile ↗</a
-            >
-            <a href="#work" class="nav-pill">Work</a>
-            <a href="#blog" class="nav-pill">Blog</a>
-            <a href="#connect" class="nav-pill">Connect</a>
+            <a href="index.html" class="nav-pill is-active">Home</a>
+            <a href="profile.html" class="nav-pill">Profile</a>
+            <a href="work.html" class="nav-pill">Projects</a>
+            <a href="blog.html" class="nav-pill">Blog</a>
           </nav>
 
           <div class="nav-cta">
-            <a href="#contact" class="btn btn-primary btn-sm">Get in touch</a>
+            <a href="contact.html" class="btn btn-primary btn-sm">Get in touch</a>
             <button
               class="nav-toggle"
               id="nav-toggle"
@@ -77,16 +71,10 @@
           </div>
         </div>
         <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
-          <a
-            href="https://digital.boesger.com"
-            target="_blank"
-            rel="noopener"
-            class="nav-pill"
-            >Profile ↗</a
-          >
-          <a href="#work" class="nav-pill">Work</a>
-          <a href="#blog" class="nav-pill">Blog</a>
-          <a href="#connect" class="nav-pill">Connect</a>
+          <a href="index.html" class="nav-pill is-active">Home</a>
+          <a href="profile.html" class="nav-pill">Profile</a>
+          <a href="work.html" class="nav-pill">Projects</a>
+          <a href="blog.html" class="nav-pill">Blog</a>
         </nav>
       </header>
 
@@ -103,8 +91,8 @@
               consult. I build, and I build fast.
             </p>
             <div class="hero-ctas">
-              <a href="#contact" class="btn btn-primary btn-lg">Start a project</a>
-              <a href="#work" class="btn btn-secondary btn-lg">See what I build</a>
+              <a href="contact.html" class="btn btn-primary btn-lg">Start a project</a>
+              <a href="work.html" class="btn btn-secondary btn-lg">See what I build</a>
               <a
                 href="https://www.linkedin.com/in/phillip-boesger-90691215a/"
                 target="_blank"
@@ -127,12 +115,7 @@
                 <div class="stat-label">open-source tools</div>
               </div>
             </div>
-            <a
-              href="https://digital.boesger.com"
-              target="_blank"
-              rel="noopener"
-              class="profile-callout"
-            >
+            <a href="profile.html" class="profile-callout">
               <img
                 src="assets/images/boesger-icon.png"
                 alt=""
@@ -144,7 +127,7 @@
                 >
                 <span class="profile-callout-desc"
                   >About me, background and how to work with me — the full
-                  story on digital.boesger.com.</span
+                  story.</span
                 >
               </span>
               <svg
@@ -217,9 +200,7 @@
 
               <a
                 class="glass-card work-card"
-                href="https://polarion-mcp.boesger.com"
-                target="_blank"
-                rel="noopener"
+                href="work/polarion-mcp.html"
                 data-reveal
               >
                 <div class="work-card-media">
@@ -244,9 +225,7 @@
 
               <a
                 class="glass-card work-card"
-                href="https://polarion.code.editor.boesger.com"
-                target="_blank"
-                rel="noopener"
+                href="work/polarion-code-editor.html"
                 data-reveal
               >
                 <div class="work-card-media">
@@ -271,9 +250,7 @@
 
               <a
                 class="glass-card work-card"
-                href="https://polarion-docker.boesger.com"
-                target="_blank"
-                rel="noopener"
+                href="work/polarion-docker.html"
                 data-reveal
               >
                 <div class="work-card-media">
@@ -298,9 +275,7 @@
 
               <a
                 class="glass-card work-card"
-                href="https://digital.boesger.com/ai-hub"
-                target="_blank"
-                rel="noopener"
+                href="work/ai-enablement-hub.html"
                 data-reveal
               >
                 <div class="work-card-media">
@@ -349,43 +324,37 @@
                 </div>
               </a>
             </div>
+            <div style="text-align: center; margin-top: 32px" data-reveal>
+              <a href="work.html" class="btn btn-secondary btn-md">See all projects →</a>
+            </div>
           </div>
         </section>
 
         <!-- Blog -->
         <section class="section section-tinted" id="blog">
-          <div class="section-inner blog-grid">
-            <div data-reveal>
-              <span class="kicker">Polarion Blog</span>
-              <h2>The go-to blog for Polarion ALM &amp; AI</h2>
-              <p>
-                Practical tips, real customizations, CI/CD automation and AI
-                agent experiments — everything I learn shipping AI into
-                Polarion, written down.
-              </p>
-              <a
-                href="https://polarion.boesger.com"
-                target="_blank"
-                rel="noopener"
-                class="btn btn-secondary btn-md"
-                >Read the blog →</a
-              >
-            </div>
-            <div data-reveal>
-              <div class="glass-panel blog-panel">
-                <p class="glass-panel-label">Stay in the loop</p>
-                <h3>Get free updates</h3>
+          <div class="section-inner">
+            <div class="blog-band" data-reveal>
+              <div>
+                <p class="glass-panel-label">Polarion Blog</p>
+                <h2>The go-to blog for Polarion ALM &amp; AI</h2>
                 <p>
-                  New Polarion &amp; AI deep-dives straight to your inbox —
-                  free, no spam, unsubscribe anytime.
+                  Practical tips, real customizations, CI/CD automation and AI
+                  agent experiments — everything I learn shipping AI into
+                  Polarion, written down.
                 </p>
-                <a
-                  href="https://polarion.boesger.com/#/portal/signup"
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn-primary btn-md"
-                  >Subscribe for free</a
-                >
+                <div class="hero-ctas" style="margin-top: 0">
+                  <a href="blog.html" class="btn btn-secondary btn-md">Explore the blog</a>
+                  <a
+                    href="https://polarion.boesger.com/#/portal/signup"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-primary btn-md"
+                    >Subscribe for free</a
+                  >
+                </div>
+              </div>
+              <div class="blog-band-media">
+                <img src="assets/images/polarion-hero.jpeg" alt="Polarion" />
               </div>
             </div>
           </div>
@@ -398,8 +367,9 @@
               <span class="kicker">Connect</span>
               <h2>Everything, in one place</h2>
               <p>
-                All my public channels — business and personal. One hub
-                instead of a dozen tabs.
+                All my public channels — business and personal. Prefer a
+                single compact list?
+                <a href="links.html">Open the links page →</a>
               </p>
             </div>
             <div class="connect-grid" data-reveal>
@@ -439,12 +409,7 @@
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </a>
-              <a
-                href="https://colors.boesger.com"
-                target="_blank"
-                rel="noopener"
-                class="link-card"
-              >
+              <a href="colors.html" class="link-card">
                 <img src="assets/images/colors.png" alt="" />
                 <span>Bösger Colors</span>
                 <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -497,7 +462,7 @@
                   class="btn btn-primary btn-lg"
                   >Book a call</a
                 >
-                <a href="mailto:consulting@boesger.com" class="btn btn-secondary btn-lg"
+                <a href="mailto:digital@boesger.com" class="btn btn-secondary btn-lg"
                   >Send an email</a
                 >
                 <a
@@ -514,58 +479,66 @@
       </main>
 
       <footer class="site-footer">
-        <div class="site-footer-main">
-          <div class="footer-brand-block">
-            <img
-              src="assets/images/boesger-digital-wordmark.png"
-              alt="Bösger Digital"
-              class="brand-logo"
-            />
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo-link">
+              <img
+                src="assets/images/boesger-digital-wordmark.png"
+                alt="Bösger Digital"
+                class="brand-logo"
+              />
+            </a>
             <p class="footer-tagline">More AI, less manual work.</p>
           </div>
-          <nav class="footer-nav" aria-label="Footer-Navigation">
-            <a href="https://digital.boesger.com" target="_blank" rel="noopener"
-              >Profile ↗</a
-            >
-            <a href="#work">Work</a>
-            <a href="#blog">Blog</a>
-            <a href="#connect">Connect</a>
-          </nav>
-          <p class="footer-copy">
-            © <span id="footer-year"></span> Phillip Bösger · Bösger Digital
-          </p>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="automation.html" class="footer-pill-link">Automation</a>
+              <a href="colors.html" class="footer-pill-link">
+                <img src="assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
         </div>
         <div class="site-footer-internal">
           <div class="site-footer-internal-inner">
-            <span class="internal-label">Internal</span>
+            <p class="footer-copy">
+              © <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com
+            </p>
             <a
-              href="https://n8n.boesger.com"
+              href="https://digital.boesger.com/imprint/"
               target="_blank"
-              rel="nofollow noopener"
-              class="internal-link"
-              title="n8n"
+              rel="noopener"
+              class="footer-legal-link"
+              >Imprint / Legal Disclosure</a
             >
-              <img src="assets/images/n8n.png" alt="" />n8n
-            </a>
-            <a
-              href="http://proxmox.boesger.com"
-              target="_blank"
-              rel="nofollow noopener"
-              class="internal-link"
-              title="Proxmox"
-            >
-              <img src="assets/images/proxmox-light.png" alt="" />Proxmox
-            </a>
           </div>
         </div>
       </footer>
     </div>
 
-    <script src="assets/js/network.js?v=20260715c"></script>
-    <script src="assets/js/site.js?v=20260715c"></script>
+    <script src="assets/js/network.js?v=20260717a"></script>
+    <script src="assets/js/site.js?v=20260717a"></script>
     <script>
-      document.getElementById("footer-year").textContent =
-        new Date().getFullYear();
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="The go-to blog for Polarion ALM & AI — practical tips, real customizations, CI/CD automation and hands-on AI agent experiments from Phillip Bösger."
+    />
+    <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png" />
+    <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <title>Blog — Phillip Bösger</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css?v=20260717a" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="network-canvas"></canvas>
+
+    <div class="page">
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="index.html" class="brand-logo-link">
+            <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+          </a>
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="index.html" class="nav-pill">Home</a>
+            <a href="profile.html" class="nav-pill">Profile</a>
+            <a href="work.html" class="nav-pill">Projects</a>
+            <a href="blog.html" class="nav-pill is-active">Blog</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-primary btn-sm">Get in touch</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="index.html" class="nav-pill">Home</a>
+          <a href="profile.html" class="nav-pill">Profile</a>
+          <a href="work.html" class="nav-pill">Projects</a>
+          <a href="blog.html" class="nav-pill is-active">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="page-head centered" data-reveal>
+          <span class="kicker">Polarion Blog</span>
+          <h1>The go-to blog for Polarion &amp; AI</h1>
+          <p>
+            Practical tips, real customizations, CI/CD automation and hands-on
+            AI agent experiments — everything I learn shipping AI into
+            Polarion, shared freely.
+          </p>
+        </div>
+
+        <section class="section" style="padding-top: 32px">
+          <div class="section-inner">
+            <div class="posts-grid" data-reveal>
+              <div class="glass-panel post-card">
+                <span class="product-badge">Topic</span>
+                <h3>AI agents &amp; Copilot in Polarion</h3>
+                <p>Hands-on experiments connecting GitHub Copilot and the MCP server to real Polarion backlogs.</p>
+              </div>
+              <div class="glass-panel post-card">
+                <span class="product-badge">Topic</span>
+                <h3>CI/CD &amp; pipeline automation</h3>
+                <p>Automated release notes, quality gates and replacing manual clicks with automated workflows.</p>
+              </div>
+              <div class="glass-panel post-card">
+                <span class="product-badge">Topic</span>
+                <h3>Real Polarion customizations</h3>
+                <p>Velocity macros, work item types, widgets and configuration lifted straight from real delivery.</p>
+              </div>
+              <div class="glass-panel post-card">
+                <span class="product-badge">Topic</span>
+                <h3>Dev environment &amp; tooling</h3>
+                <p>VS Code, Docker, MCP and the setups that make Copilot actually useful day to day.</p>
+              </div>
+            </div>
+            <p class="post-note">
+              These are the topics I write about — new articles are published
+              continuously on the
+              <a href="https://polarion.boesger.com" target="_blank" rel="noopener">live blog</a>.
+            </p>
+            <div class="contact-band" data-reveal>
+              <h2>Get free updates</h2>
+              <p>New Polarion &amp; AI deep-dives straight to your inbox — free, no spam, unsubscribe anytime.</p>
+              <div class="hero-ctas">
+                <a href="https://polarion.boesger.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Read the blog</a>
+                <a href="https://polarion.boesger.com/#/portal/signup" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Subscribe for free</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo-link">
+              <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+            </a>
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="automation.html" class="footer-pill-link">Automation</a>
+              <a href="colors.html" class="footer-pill-link">
+                <img src="assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
+            <a href="https://digital.boesger.com/imprint/" target="_blank" rel="noopener" class="footer-legal-link">Imprint / Legal Disclosure</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/network.js?v=20260717a"></script>
+    <script src="assets/js/site.js?v=20260717a"></script>
+    <script>
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>

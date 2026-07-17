@@ -1,10 +1,9 @@
-/* Bösger Digital — site interactions: sticky nav, scroll-spy, mobile menu, reveal-on-scroll */
+/* Bösger Digital — site interactions: sticky nav, mobile menu, reveal-on-scroll,
+   tab bars (Profile / install commands), skill detail modal, media carousel. */
 (function () {
   var header = document.getElementById("site-header");
   var navToggle = document.getElementById("nav-toggle");
   var mobileNav = document.getElementById("mobile-nav");
-  var navPills = document.querySelectorAll(".nav-pill[href^='#']");
-  var sections = document.querySelectorAll("main section[id]");
 
   // Sticky header background
   function onScroll() {
@@ -29,26 +28,6 @@
     });
   }
 
-  // Scroll-spy: highlight the nav pill matching the section in view
-  if (sections.length && navPills.length) {
-    var setActive = function (id) {
-      navPills.forEach(function (pill) {
-        pill.classList.toggle("is-active", pill.getAttribute("href") === "#" + id);
-      });
-    };
-    var spy = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: "-45% 0px -50% 0px" }
-    );
-    sections.forEach(function (section) {
-      if (section.id !== "top") spy.observe(section);
-    });
-  }
-
   // Reveal-on-scroll
   var reveals = document.querySelectorAll("[data-reveal]");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -68,4 +47,108 @@
   } else {
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
+
+  // Tab bars: any [data-tabs="group"] bar of [data-tab-target] buttons,
+  // paired with [data-tabs-group="group"][data-tab-panel] panels.
+  // A button may carry data-tab-hash="id" to make its panel deep-linkable via location.hash.
+  document.querySelectorAll("[data-tabs]").forEach(function (bar) {
+    var group = bar.getAttribute("data-tabs");
+    var buttons = bar.querySelectorAll("[data-tab-target]");
+    var panels = document.querySelectorAll('[data-tabs-group="' + group + '"]');
+
+    function activate(target, syncHash) {
+      buttons.forEach(function (b) {
+        b.classList.toggle("is-active", b.getAttribute("data-tab-target") === target);
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle("is-active", p.getAttribute("data-tab-panel") === target);
+      });
+      if (syncHash) {
+        var btn = bar.querySelector('[data-tab-target="' + target + '"]');
+        var hash = btn && btn.getAttribute("data-tab-hash");
+        if (hash) history.replaceState(null, "", "#" + hash);
+      }
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.preventDefault();
+        activate(b.getAttribute("data-tab-target"), true);
+      });
+    });
+
+    if (location.hash) {
+      var hashVal = location.hash.slice(1);
+      var matched = null;
+      buttons.forEach(function (b) {
+        if (b.getAttribute("data-tab-hash") === hashVal) matched = b;
+      });
+      if (matched) activate(matched.getAttribute("data-tab-target"), false);
+    }
+  });
+
+  // Skill detail modal (Profile → Skills): each [data-skill-modal] card holds a
+  // hidden .skill-detail block; its content is cloned into the shared modal on click.
+  var modal = document.getElementById("skill-modal");
+  if (modal) {
+    var modalIcon = modal.querySelector("[data-modal-icon]");
+    var modalName = modal.querySelector("[data-modal-name]");
+    var modalDesc = modal.querySelector("[data-modal-desc]");
+    var modalDetail = modal.querySelector("[data-modal-detail]");
+
+    function openModal(card) {
+      var detail = card.querySelector(".skill-detail");
+      if (!detail) return;
+      var icon = detail.querySelector("[data-icon]");
+      modalIcon.innerHTML = icon ? icon.innerHTML : "";
+      modalName.textContent = detail.querySelector("[data-name]").textContent;
+      modalDesc.textContent = detail.querySelector("[data-desc]").textContent;
+      modalDetail.textContent = detail.querySelector("[data-detail]").textContent;
+      modal.classList.add("is-open");
+    }
+    function closeModal() {
+      modal.classList.remove("is-open");
+    }
+
+    document.querySelectorAll("[data-skill-modal]").forEach(function (card) {
+      card.addEventListener("click", function () { openModal(card); });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal(card);
+        }
+      });
+    });
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) closeModal();
+    });
+    modal.querySelectorAll("[data-modal-close]").forEach(function (btn) {
+      btn.addEventListener("click", closeModal);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+  }
+
+  // Media carousel ("see it in action" screenshots/GIFs)
+  document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+    var slides = carousel.querySelectorAll(".carousel-slide");
+    var dots = carousel.querySelectorAll(".carousel-dot");
+    var prev = carousel.querySelector(".carousel-prev");
+    var next = carousel.querySelector(".carousel-next");
+    if (slides.length < 2) return;
+    var idx = 0;
+    slides.forEach(function (s, i) { if (s.classList.contains("is-active")) idx = i; });
+
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach(function (s, j) { s.classList.toggle("is-active", j === idx); });
+      dots.forEach(function (d, j) { d.classList.toggle("is-active", j === idx); });
+    }
+    dots.forEach(function (d, i) {
+      d.addEventListener("click", function () { show(i); });
+    });
+    if (prev) prev.addEventListener("click", function () { show(idx - 1); });
+    if (next) next.addEventListener("click", function () { show(idx + 1); });
+  });
 })();
