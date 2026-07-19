@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="AI Enablement Hub — structured AI coaching for developers, deep focus on Polarion, fully applicable beyond. GitHub Copilot, MCP, testing and CI/CD."
+    />
+    <link rel="shortcut icon" href="../assets/images/boesger-digital.png" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/boesger-digital.png" />
+    <link rel="icon" href="../assets/images/boesger-digital.png" type="image/webp" />
+    <title>AI Enablement Hub — Phillip Bösger</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/style.css?v=20260719c" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="network-canvas"></canvas>
+
+    <div class="page">
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="../index.html" class="brand-logo-link">
+            <img src="../assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+          </a>
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="../index.html" class="nav-pill">Home</a>
+            <a href="../profile.html" class="nav-pill">Profile</a>
+            <a href="../work.html" class="nav-pill is-active">Projects</a>
+            <a href="../blog.html" class="nav-pill">Blog</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="../contact.html" class="btn btn-primary btn-sm">Get in touch</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="../index.html" class="nav-pill">Home</a>
+          <a href="../profile.html" class="nav-pill">Profile</a>
+          <a href="../work.html" class="nav-pill is-active">Projects</a>
+          <a href="../blog.html" class="nav-pill">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="section-inner" style="padding: 28px 24px 64px">
+          <a href="../work.html" class="back-link">← Back to work</a>
+
+          <div class="product-hero" data-reveal>
+            <span class="product-badge">AI Enablement Hub · On Demand</span>
+            <h1>AI Enablement Hub</h1>
+            <p class="product-tagline">GitHub Copilot. Finally used right.</p>
+            <p class="product-subtitle">Structured AI coaching for developers, deep focus on Polarion, fully applicable beyond.</p>
+            <div class="product-chips">
+              <span class="tag">On Demand</span>
+              <span class="tag">From €149</span>
+              <span class="tag">Polarion-based</span>
+            </div>
+            <div class="hero-ctas">
+              <a href="mailto:digital@boesger.com?subject=AI%20Enablement%20Hub%20Access" class="btn btn-primary btn-lg">Get access, from €149</a>
+              <a href="https://digital.boesger.com/ai-hub" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Preview the live Hub</a>
+            </div>
+          </div>
+
+          <div class="stat-tile-grid" data-reveal>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">6+</div><div class="stat-tile-label">Coaching modules</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">5</div><div class="stat-tile-label">Weeks · setup to audit</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">Full</div><div class="stat-tile-label">Copilot, MCP, testing &amp; CI/CD</div></div>
+            <div class="glass-panel stat-tile"><div class="stat-tile-value">On Demand</div><div class="stat-tile-label">Instant access</div></div>
+          </div>
+
+          <h2 class="section-title">What it does</h2>
+          <div class="feature-grid" data-reveal>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Foundation Setup</h4>
+              <p>VS Code, GitHub Copilot &amp; Docker — one unified baseline for everyone before the first ticket is touched.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Copilot: Actually Useful</h4>
+              <p>Configuration, custom instructions, skills and the three extensions that make the real difference.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Stop Debugging. Start Reviewing.</h4>
+              <p>Two workflow shifts and one mindset change — let Copilot take the first step, then learn what to do with the result.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>800 Unit &amp; UI Tests</h4>
+              <p>Copilot generates and maintains 800 tests automatically, plus Playwright MCP UI tests giving Copilot eyes on Polarion.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>MCP: Direct Polarion Access</h4>
+              <p>The Polarion MCP Server connects Copilot to your backlog — read the ticket, understand context, write the code.</p>
+            </div>
+            <div class="glass-card feature-card">
+              <div class="feature-bar"></div>
+              <h4>Context &amp; Token Efficiency</h4>
+              <p>Achieve more with less context — cacheable prompts, project knowledge, session management. Plus a 7-minute final audit.</p>
+            </div>
+          </div>
+
+          <h2 class="section-title">Up and running in 3 steps</h2>
+          <div class="steps-grid" data-reveal>
+            <div class="glass-panel step-card">
+              <div class="step-num">01</div>
+              <h4>Proven in Real Delivery</h4>
+              <p>Every guide was developed on real customer projects, not theory, and is continuously expanded.</p>
+            </div>
+            <div class="glass-panel step-card">
+              <div class="step-num">02</div>
+              <h4>Pull Principle: Real Tickets</h4>
+              <p>In live coaching you bring your actual ticket and we work through it together. That's the core.</p>
+            </div>
+            <div class="glass-panel step-card">
+              <div class="step-num">03</div>
+              <h4>Measurable Progress</h4>
+              <p>Baseline survey at the start, a 7-minute audit at the end — you see whether your workflow actually changed.</p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 44px" data-reveal>
+            <h2 class="section-title" style="margin-bottom: 6px">Access &amp; Pricing</h2>
+            <p class="section-lead">All materials on demand, instant access after purchase. Live coaching rounds available on request.</p>
+            <div class="compat-grid">
+              <div class="glass-panel compat-card">
+                <div class="compat-name">Materials Access · €149 one-time</div>
+                <div class="compat-meta">All coaching modules, prompt libraries and checklists — yours to keep, including future updates.</div>
+                <span class="compat-note">recommended</span>
+              </div>
+              <div class="glass-panel compat-card">
+                <div class="compat-name">Teams &amp; Companies · On request</div>
+                <div class="compat-meta">For teams of 3+: live coaching sessions, real team tickets solved live and a group audit.</div>
+                <span class="compat-note">team package</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-band" data-reveal>
+            <h2>Ready to actually use AI?</h2>
+            <p>Write to me directly — I respond personally and help you find the right entry point.</p>
+            <div class="hero-ctas">
+              <a href="mailto:digital@boesger.com?subject=AI%20Enablement%20Hub%20Access" class="btn btn-primary btn-lg">Get access, from €149</a>
+              <a href="https://digital.boesger.com/ai-hub" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">Preview the live Hub</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="../index.html" class="brand-logo-link">
+              <img src="../assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+            </a>
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="../assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="../assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="../assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="../colors.html" class="footer-pill-link">
+                <img src="../assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
+            <a href="https://digital.boesger.com/imprint/" target="_blank" rel="noopener" class="footer-legal-link">Imprint / Legal Disclosure</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../assets/js/network.js?v=20260719c"></script>
+    <script src="../assets/js/site.js?v=20260719c"></script>
+    <script>
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>

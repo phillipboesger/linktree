@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="Phillip Bösger — Polarion Expert, AI & Full-Stack Developer. Profile, CV, skills, working style and a downloadable résumé."
+    />
+    <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png" />
+    <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <title>Profile — Phillip Bösger</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css?v=20260719c" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="network-canvas"></canvas>
+
+    <div class="page">
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="index.html" class="brand-logo-link">
+            <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+          </a>
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="index.html" class="nav-pill">Home</a>
+            <a href="profile.html" class="nav-pill is-active">Profile</a>
+            <a href="work.html" class="nav-pill">Projects</a>
+            <a href="blog.html" class="nav-pill">Blog</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-primary btn-sm">Get in touch</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="index.html" class="nav-pill">Home</a>
+          <a href="profile.html" class="nav-pill is-active">Profile</a>
+          <a href="work.html" class="nav-pill">Projects</a>
+          <a href="blog.html" class="nav-pill">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="page-head" data-reveal>
+          <span class="kicker">Profile</span>
+          <h1>Hey, I'm Phillip</h1>
+          <p class="page-eyebrow">Polarion Expert, AI &amp; Full-Stack Developer</p>
+        </div>
+
+        <div class="section-inner" style="padding: 0 24px 64px">
+          <div class="tabbar" data-tabs="profile" style="margin-bottom: 36px" data-reveal>
+            <button type="button" class="tab-pill is-active" data-tab-target="overview" data-tab-hash="overview">Overview</button>
+            <button type="button" class="tab-pill" data-tab-target="cv" data-tab-hash="cv">CV</button>
+            <button type="button" class="tab-pill" data-tab-target="skills" data-tab-hash="skills">Skills</button>
+            <button type="button" class="tab-pill" data-tab-target="services" data-tab-hash="working-with-me">Working with me</button>
+            <button type="button" class="tab-pill" data-tab-target="about" data-tab-hash="about">About</button>
+          </div>
+
+          <!-- Overview -->
+          <div class="tab-panel is-active" data-tabs-group="profile" data-tab-panel="overview">
+            <div class="profile-layout">
+              <div>
+                <p class="cv-intro" style="margin-bottom: 24px">
+                  8 years of Polarion, from Siemens enterprise to startup. I bridge the
+                  gap between requirements management and technical execution.
+                  <strong style="color: #fff">I do not just consult. I build. And I build fast.</strong>
+                </p>
+                <p class="glass-panel-label" style="margin-bottom: 14px">I work in two modes</p>
+                <div class="profile-modes">
+                  <div class="glass-panel">
+                    <h3 style="margin: 0 0 8px; color: #fff; font-size: 19px; font-weight: 700">→ Dev</h3>
+                    <p style="margin: 0; color: rgba(195, 222, 245, 0.82); font-size: 15px; line-height: 1.65">
+                      Custom Polarion extensions from spec to production. Java, REST,
+                      Velocity, workflows, CI/CD with automated release documentation.
+                      Powered by AI toolchains for faster delivery without cutting corners.
+                    </p>
+                  </div>
+                  <div class="glass-panel">
+                    <h3 style="margin: 0 0 8px; color: #fff; font-size: 19px; font-weight: 700">→ Enablement</h3>
+                    <p style="margin: 0; color: rgba(195, 222, 245, 0.82); font-size: 15px; line-height: 1.65">
+                      If your team has Siemens Polarion X or AI tools and isn't getting
+                      ROI from them, I run hands-on assessments and coaching sprints
+                      that change that.
+                    </p>
+                  </div>
+                </div>
+                <div class="availability-row">
+                  <span class="badge badge-success"><span class="badge-dot"></span>Available now</span>
+                  <span class="availability-note">Remote worldwide · hybrid on request in DACH</span>
+                </div>
+              </div>
+              <div class="profile-side">
+                <div class="profile-side-photo">
+                  <img src="assets/images/about-image.webp" alt="Phillip Bösger" />
+                </div>
+                <div class="glass-panel profile-side-stats">
+                  <div>
+                    <div style="color: #fff; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em">8+ yrs</div>
+                    <div style="color: var(--text-muted); font-size: 12px; font-weight: 600">Polarion ALM</div>
+                  </div>
+                  <div style="width: 1px; background: var(--border-subtle)"></div>
+                  <div>
+                    <div style="color: #fff; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em">3+</div>
+                    <div style="color: var(--text-muted); font-size: 12px; font-weight: 600">OSS tools</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CV -->
+          <div class="tab-panel" data-tabs-group="profile" data-tab-panel="cv">
+            <p class="cv-intro">
+              I've spent eight years with Polarion, growing from building the first
+              custom extensions to running AI-automated delivery pipelines, with deep
+              roots in medical device projects and requirements engineering. I take
+              problems through to working software: I find out what the client
+              actually needs, define the right approach, and build it clean, tested
+              and documented. I could deliver the same quality without AI, but it
+              would take two to three times longer. With AI I run parallel
+              workstreams, hold higher test coverage and documentation quality, and
+              keep full oversight of where a project stands and where it's headed.
+            </p>
+
+            <h3 class="subsection-title">Work Experience</h3>
+            <div class="exp-list">
+              <div class="glass-panel exp-card">
+                <div class="exp-card-head">
+                  <h4>Polarion Expert &amp; AI Developer</h4>
+                  <span class="exp-period">01/2026 – Present</span>
+                </div>
+                <p class="exp-org">Self-Employed · Germany (remote)</p>
+                <p class="exp-summary">I build and ship custom Polarion extensions for clients including avasis Solutions, taking each one from spec to production.</p>
+                <ul class="exp-bullets">
+                  <li><strong>Custom extensions &amp; integrations: </strong>Java extensions, REST integrations, Velocity templates and workflow scripts, delivered spec to production.</li>
+                  <li><strong>CI/CD &amp; release automation: </strong>Pipelines with quality gates and automated release documentation that cut manual overhead for clients.</li>
+                  <li><strong>Built avaCopilot from scratch: </strong>an AI copilot inside Polarion that drafts documentation, flags review issues and untangles requirements in real time.</li>
+                  <li><strong>AI enablement: </strong>Coaching development teams on practical AI adoption in Polarion, publishing what I learn on polarion.boesger.com.</li>
+                </ul>
+              </div>
+              <div class="glass-panel exp-card">
+                <div class="exp-card-head">
+                  <h4>ALM Consultant → Senior Software Developer</h4>
+                  <span class="exp-period">11/2020 – 12/2025 · 5 yrs</span>
+                </div>
+                <p class="exp-org">avasis Solutions GmbH · Nuremberg</p>
+                <p class="exp-summary">Five years across three roles, growing from ALM Consultant to Senior Developer while modernizing the internal development process along the way.</p>
+                <ul class="exp-bullets">
+                  <li><strong>Senior Software Developer (2024–2025): </strong>Built Polarion extensions across the full lifecycle and embedded LLMs and AI agents into the team's daily workflow, raising review, documentation and testing quality.</li>
+                  <li><strong>Technical Development Lead (2022–2024): </strong>Led a team of six through the full lifecycle — planning, architecture, QA and release — and advised enterprise clients on Polarion architecture.</li>
+                  <li><strong>ALM Consultant (2020–2022): </strong>Ran medical-device projects end to end and built a complete licence-management service plus an Excel-like table component inside Polarion from scratch.</li>
+                </ul>
+              </div>
+              <div class="glass-panel exp-card">
+                <div class="exp-card-head">
+                  <h4>PLM Consultant</h4>
+                  <span class="exp-period">09/2018 – 11/2020</span>
+                </div>
+                <p class="exp-org">Atos · Fürth</p>
+                <p class="exp-summary">Built Java plugins and widgets in Polarion ALM for Siemens, taking early technical ownership of genuinely complex extension work.</p>
+                <ul class="exp-bullets">
+                  <li><strong>Test automation: </strong>Set up test automation from the ground up.</li>
+                  <li><strong>Scrum Master: </strong>Served as Scrum Master alongside my development work.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="subsection-title">Education</h3>
+            <div class="edu-grid">
+              <div class="glass-panel edu-card">
+                <h4>M.Sc. Computer Science</h4>
+                <p class="edu-school">TH Georg Simon Ohm, Nuremberg</p>
+                <p class="edu-meta">2022 · GPA 1.6</p>
+                <p class="edu-desc">Master's in Computer Science, deepening the theoretical foundations that fed directly back into day-to-day engineering.</p>
+              </div>
+              <div class="glass-panel edu-card">
+                <h4>B.Sc. Computer Science</h4>
+                <p class="edu-school">DHBW Mannheim · Dual study with Atos</p>
+                <p class="edu-meta">2018 · GPA 1.9</p>
+                <p class="edu-desc">Dual study at Atos. Thesis: reference modelling for large-scale Scrum project organisation using Polarion.</p>
+              </div>
+            </div>
+
+            <a href="assets/documents/CV_Polarion_Expert_EN.pdf" target="_blank" class="btn btn-secondary btn-md" style="margin-top: 28px">Download CV as PDF</a>
+          </div>
+
+          <!-- Skills -->
+          <div class="tab-panel" data-tabs-group="profile" data-tab-panel="skills">
+            <h3 class="subsection-title">Skills &amp; Tools</h3>
+            <div class="skills-grid">
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://icons.duckduckgo.com/ip3/polarion.com.ico" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">Polarion</span><span class="skill-desc">Tool and process expert</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://icons.duckduckgo.com/ip3/polarion.com.ico" alt="" /></span>
+                  <span data-name>Polarion</span><span data-desc>Tool and process expert</span>
+                  <span data-detail>A decade across the full Polarion ALM stack: work item types, workflows, LiveDoc rendering, Velocity, widgets, the REST and Java SDK, admin configuration and licensing. Everything from small customizations to complete custom services in regulated, medical-device environments.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="assets/images/github.png" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">GitHub</span><span class="skill-desc">Structure, Actions &amp; CI/CD</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="assets/images/github.png" alt="" /></span>
+                  <span data-name>GitHub</span><span data-desc>Structure, Actions &amp; CI/CD</span>
+                  <span data-detail>My source of truth for code and delivery: repository and branch strategy, pull-request review flows, and GitHub Actions pipelines with Maven and Jenkins, including automated quality gates, versioning and auto-generated release notes.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://icons.duckduckgo.com/ip3/openai.com.ico" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">GenAI</span><span class="skill-desc">ChatGPT, automation &amp; AI agents</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://icons.duckduckgo.com/ip3/openai.com.ico" alt="" /></span>
+                  <span data-name>GenAI</span><span data-desc>ChatGPT, automation &amp; AI agents</span>
+                  <span data-detail>Hands-on GenAI in production, not demos. ChatGPT, Claude and Copilot for code generation, review, test scaffolding and documentation, plus custom AI agents that read real systems and act on them. This is the core of how I deliver two to three times faster.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://icons.duckduckgo.com/ip3/java.com.ico" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">Java Development</span><span class="skill-desc">Servlets, backends and services</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://icons.duckduckgo.com/ip3/java.com.ico" alt="" /></span>
+                  <span data-name>Java Development</span><span data-desc>Servlets, backends and services</span>
+                  <span data-detail>The backbone of my Polarion work: servlets, REST endpoints, background jobs, workflow functions and integrations, built to enterprise standards with proper testing, logging and documentation.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">Web Development</span><span class="skill-desc">From basics to frameworks</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://cdn.simpleicons.org/html5/E34F26" alt="" /></span>
+                  <span data-name>Web Development</span><span data-desc>From basics to frameworks</span>
+                  <span data-detail>Full front-end capability from HTML, CSS and vanilla JavaScript to modern frameworks. I build Polarion admin UIs, custom widgets, interactive tables and product sites that match the brand and stay maintainable.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://cdn.simpleicons.org/jenkins/8CECFF" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">DevOps</span><span class="skill-desc">Analysis to solution &amp; docs</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://cdn.simpleicons.org/jenkins/8CECFF" alt="" /></span>
+                  <span data-name>DevOps</span><span data-desc>Analysis to solution &amp; docs</span>
+                  <span data-detail>Delivery from problem analysis to running software: CI/CD pipelines, containerization with Docker, Podman and Apple Container, quality gates, automated release documentation and reproducible environments that keep teams shipping.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://cdn.simpleicons.org/modelcontextprotocol/8CECFF" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">MCP &amp; AI Agents</span><span class="skill-desc">Model Context Protocol, agents &amp; tooling</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://cdn.simpleicons.org/modelcontextprotocol/8CECFF" alt="" /></span>
+                  <span data-name>MCP &amp; AI Agents</span><span data-desc>Model Context Protocol, agents &amp; tooling</span>
+                  <span data-detail>Author of the Polarion MCP Server, exposing 271 REST operations. I connect Copilot, Claude and ChatGPT directly to real backlogs and systems so agents read context, follow the ticket and write implementation-ready code.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">Docker &amp; Containers</span><span class="skill-desc">Containerized dev &amp; deployment</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" /></span>
+                  <span data-name>Docker &amp; Containers</span><span data-desc>Containerized dev &amp; deployment</span>
+                  <span data-detail>Author of polarion-docker: fully automated, multi-runtime images (Docker, OrbStack, Apple Container, Podman) with PostgreSQL, SVN, WebSocket config, an integrated Java debugger and an embedded mail catcher, turning a half-day setup into two commands.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="assets/images/n8n.png" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">n8n Automation</span><span class="skill-desc">Workflow automation &amp; integrations</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="assets/images/n8n.png" alt="" /></span>
+                  <span data-name>n8n Automation</span><span data-desc>Workflow automation &amp; integrations</span>
+                  <span data-detail>Self-hosted n8n orchestrating integrations, webhooks and AI agents. The automation glue behind less manual work, wiring tools together so repetitive steps simply disappear.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://icons.duckduckgo.com/ip3/playwright.dev.ico" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">Test Automation</span><span class="skill-desc">Unit, UI &amp; Playwright MCP testing</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://icons.duckduckgo.com/ip3/playwright.dev.ico" alt="" /></span>
+                  <span data-name>Test Automation</span><span data-desc>Unit, UI &amp; Playwright MCP testing</span>
+                  <span data-detail>AI-assisted testing at scale: Copilot-generated unit tests and Playwright MCP UI tests that give the AI real eyes on the Polarion interface, all wired into CI.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://api.iconify.design/lucide/clipboard-check.svg?color=%238CECFF" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">Requirements Engineering</span><span class="skill-desc">ALM in regulated &amp; medical domains</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://api.iconify.design/lucide/clipboard-check.svg?color=%238CECFF" alt="" /></span>
+                  <span data-name>Requirements Engineering</span><span data-desc>ALM in regulated &amp; medical domains</span>
+                  <span data-detail>Translating complex, regulated requirements, including medical risk management and traceability, into clean Polarion architectures, work item models and logic that hold up under audit.</span>
+                </span>
+              </div>
+              <div class="skill-card" data-skill-modal tabindex="0" role="button" aria-haspopup="dialog">
+                <span class="skill-icon"><img src="https://www.google.com/s2/favicons?domain=scrum.org&amp;sz=64" alt="" /></span>
+                <span class="skill-body"><span class="skill-name">Agile &amp; Scrum</span><span class="skill-desc">Certified Scrum Master &amp; Product Owner</span></span>
+                <span class="skill-plus">+</span>
+                <span class="skill-detail" hidden>
+                  <span data-icon><img src="https://www.google.com/s2/favicons?domain=scrum.org&amp;sz=64" alt="" /></span>
+                  <span data-name>Agile &amp; Scrum</span><span data-desc>Certified Scrum Master &amp; Product Owner</span>
+                  <span data-detail>Certified Professional Scrum Master I and Product Owner I. I run refinement, planning and delivery, keep scope predictable as requirements evolve, and translate between business stakeholders and engineering.</span>
+                </span>
+              </div>
+            </div>
+
+            <h3 class="subsection-title">Certifications &amp; Courses</h3>
+            <div class="certs-grid">
+              <div class="glass-panel cert-card">
+                <div class="cert-name">Professional Scrum Master I</div>
+                <div class="cert-by">Scrum.org</div>
+              </div>
+              <div class="glass-panel cert-card">
+                <div class="cert-name">Professional Scrum Product Owner I</div>
+                <div class="cert-by">Scrum.org</div>
+              </div>
+              <div class="glass-panel cert-card">
+                <div class="cert-name">ITIL Foundation Certificate</div>
+                <div class="cert-by">APMG International</div>
+              </div>
+              <div class="glass-panel cert-card">
+                <div class="cert-name">AI Automation: LLM Apps &amp; AI Agents with n8n &amp; APIs</div>
+                <div class="cert-by">Udemy</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Working with me -->
+          <div class="tab-panel" data-tabs-group="profile" data-tab-panel="services">
+            <p class="cv-intro" style="max-width: 46rem">
+              Collaboration should be straightforward, reliable and built on trust.
+              Here's what you can expect when we work together.
+            </p>
+            <div style="margin-bottom: 36px">
+              <div class="working-circles">
+                <div class="working-circle"><div class="working-circle-num">01</div></div>
+                <div class="working-circle"><div class="working-circle-num">02</div></div>
+                <div class="working-circle"><div class="working-circle-num">03</div></div>
+                <div class="working-circle"><div class="working-circle-num">04</div></div>
+              </div>
+              <div class="working-list">
+                <p><strong>01 · Availability. </strong>I work up to 30 hours per week. That scope lets me go deep and deliver real results, without spreading thin across too many parallel commitments.</p>
+                <p><strong>02 · Remote-First by Design. </strong>I work remotely from wherever I am in the world. Whenever on-site presence makes sense — workshops or kickoffs — we make it happen.</p>
+                <p><strong>03 · Always Reachable. </strong>Communication and coordination are always possible. Regular syncs, async updates, structured handoffs — whatever rhythm works for your team.</p>
+                <p><strong>04 · Adaptable by Nature. </strong>Requirements shift and priorities change — that's normal. I don't need everything defined upfront; as long as we communicate openly, we figure things out together.</p>
+              </div>
+            </div>
+            <div class="values-band">
+              <h3>My Values</h3>
+              <div class="values-chips">
+                <span class="tag">Openness</span>
+                <span class="tag">Communication</span>
+                <span class="tag">Transparency</span>
+                <span class="tag">Quality</span>
+              </div>
+              <p>
+                I prefer honest conversations over polished status updates. If
+                something's off, I'll say so. If I need more context, I'll ask. I'd
+                rather raise a concern early than silently push through something
+                that doesn't feel right.
+              </p>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="tab-panel" data-tabs-group="profile" data-tab-panel="about">
+            <div class="about-layout">
+              <div class="about-photo">
+                <img src="assets/images/off-duty.webp" alt="Phillip Bösger" />
+              </div>
+              <div>
+                <p class="about-intro">
+                  Hi, I'm <strong style="color: #fff">Phillip</strong>, originally
+                  from Germany. I live out of a backpack and work from wherever I
+                  want. As a digital nomad, my office is wherever there's a decent
+                  WiFi connection, and my gym is whatever box or trail I find nearby.
+                  I've spent most of my time exploring Europe and Southeast Asia, but
+                  there's still a huge chunk of the world I haven't seen yet. That's
+                  exactly what keeps me going.
+                </p>
+                <div class="about-sections">
+                  <div>
+                    <h3>One backpack. That's it.</h3>
+                    <p>Everything I own fits in a single backpack, and I genuinely don't miss a thing. Travelling light isn't a sacrifice, it's a superpower. It means I can move fast, stay flexible and say yes to opportunities without thinking twice.</p>
+                  </div>
+                  <div>
+                    <h3>Exploring the world</h3>
+                    <p>Europe and Southeast Asia have been my main territory — the islands of Thailand, the streets of Vietnam, mountain villages in the Alps, Mediterranean beach towns. Still on the list: South America, Japan, East Africa. It keeps growing.</p>
+                  </div>
+                  <div>
+                    <h3>Sport &amp; movement</h3>
+                    <p>Staying active is non-negotiable. My anchors are CrossFit and running, and I pick up whatever a place offers — surfing (very much a beginner), climbing, paddleboarding, hiking. Movement is how I reset and connect with a place.</p>
+                  </div>
+                  <div>
+                    <h3>Food first</h3>
+                    <p>Finding the best local spots is a big part of how I experience a place. A street-food stall in Bangkok, a family trattoria in Naples, a Sunday market with zero tourists — I'll always pick the longest queue of locals.</p>
+                  </div>
+                  <div>
+                    <h3>Photography</h3>
+                    <p>I enjoy photography as a way to slow down and notice things. Nothing too serious, just capturing what catches my eye. Some shots live at <a href="https://photography.boesger.com" target="_blank" rel="noopener">photography.boesger.com</a>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Shared skill detail modal -->
+      <div class="skill-modal-backdrop" id="skill-modal">
+        <div class="skill-modal">
+          <div class="skill-modal-head">
+            <span class="skill-icon" data-modal-icon></span>
+            <div>
+              <h3 data-modal-name></h3>
+              <p data-modal-desc></p>
+            </div>
+          </div>
+          <p class="skill-modal-detail" data-modal-detail></p>
+          <button type="button" class="skill-modal-close" data-modal-close>Close</button>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo-link">
+              <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+            </a>
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="colors.html" class="footer-pill-link">
+                <img src="assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
+            <a href="https://digital.boesger.com/imprint/" target="_blank" rel="noopener" class="footer-legal-link">Imprint / Legal Disclosure</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/network.js?v=20260719c"></script>
+    <script src="assets/js/site.js?v=20260719c"></script>
+    <script>
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>

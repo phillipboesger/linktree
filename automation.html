@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="Automation & Homelab — the self-hosted n8n and Proxmox infrastructure behind Phillip Bösger's workflow automation."
+    />
+    <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png" />
+    <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <title>Automation &amp; Homelab — Phillip Bösger</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css?v=20260719c" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="network-canvas"></canvas>
+
+    <div class="page">
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="index.html" class="brand-logo-link">
+            <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+          </a>
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="index.html" class="nav-pill">Home</a>
+            <a href="profile.html" class="nav-pill">Profile</a>
+            <a href="work.html" class="nav-pill">Projects</a>
+            <a href="blog.html" class="nav-pill">Blog</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-primary btn-sm">Get in touch</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="index.html" class="nav-pill">Home</a>
+          <a href="profile.html" class="nav-pill">Profile</a>
+          <a href="work.html" class="nav-pill">Projects</a>
+          <a href="blog.html" class="nav-pill">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="page-head centered" data-reveal>
+          <span class="kicker">Automation &amp; Homelab</span>
+          <h1>The engine room</h1>
+          <p>Self-hosted infrastructure and workflow automation — where the manual work actually disappears.</p>
+        </div>
+
+        <section class="section" style="padding-top: 32px">
+          <div class="section-inner">
+            <div class="automation-grid" data-reveal>
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="glass-card automation-card">
+                <div class="automation-card-head">
+                  <span class="automation-icon"><img src="assets/images/n8n.png" alt="" /></span>
+                  <span class="product-badge">Self-hosted</span>
+                </div>
+                <h3>n8n</h3>
+                <p class="work-card-tagline">Workflow automation</p>
+                <p class="work-card-desc">Self-hosted n8n orchestrating integrations and AI agents — the glue behind less manual work.</p>
+                <span class="automation-card-link">Open →</span>
+              </a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="glass-card automation-card">
+                <div class="automation-card-head">
+                  <span class="automation-icon"><img src="assets/images/proxmox-light.png" alt="" /></span>
+                  <span class="product-badge">Infrastructure</span>
+                </div>
+                <h3>Proxmox</h3>
+                <p class="work-card-tagline">Homelab &amp; infrastructure</p>
+                <p class="work-card-desc">The Proxmox virtualization host running my services, experiments and CI runners.</p>
+                <span class="automation-card-link">Open →</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo-link">
+              <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+            </a>
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="colors.html" class="footer-pill-link">
+                <img src="assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
+            <a href="https://digital.boesger.com/imprint/" target="_blank" rel="noopener" class="footer-legal-link">Imprint / Legal Disclosure</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/network.js?v=20260719c"></script>
+    <script src="assets/js/site.js?v=20260719c"></script>
+    <script>
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
