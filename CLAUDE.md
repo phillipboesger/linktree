@@ -15,14 +15,14 @@ This repo is the canonical `boesger.com` root. As of the July 2026 redesign it i
 A multi-page static site sharing one CSS file and two core JS files. There is no server-side routing or client-side SPA framework — every page is a real, independently-loadable `.html` file; navigation is plain `<a href>` between them.
 
 **Pages** (root level unless noted):
-- **`index.html`** — Home: sticky nav, hero, work/portfolio grid (teaser of `work.html`), blog band (teaser of `blog.html`), Connect link grid, contact CTA band, footer.
+- **`index.html`** — Home: sticky nav, hero, work/portfolio grid (teaser of `work.html`), blog band (teaser of `blog.html`), contact CTA band, footer. Per the design there is no Connect grid on Home — the link hub lives on `links.html`.
 - **`profile.html`** — Overview / CV / Skills / Working-with-me / About, switched via the tab-bar pattern (see below). Includes the downloadable CV PDF and the skills-grid detail modal.
 - **`work.html`** — Full projects/portfolio grid (same card pattern as Home's, but standalone with intro copy).
 - **`work/polarion-mcp.html`, `work/polarion-docker.html`, `work/polarion-code-editor.html`, `work/ai-enablement-hub.html`** — Per-project detail pages: hero, stat tiles, feature grid, "see it in action" media carousel (where applicable), setup steps, compatibility table, install-command tabs, CTA band. Relative asset paths from this folder go up one level (`../assets/...`).
 - **`blog.html`** — Blog topic cards + newsletter CTA (teases the live blog at polarion.boesger.com; posts are not authored here).
 - **`colors.html`** — Brand color swatches teaser, links out to colors.boesger.com for the full reference.
 - **`automation.html`** — n8n / Proxmox homelab showcase cards (external links to the actual tools).
-- **`links.html`** — Compact, single-column link-in-bio page (all Connect links in one lightweight list — this is the URL to use as an Instagram/social bio link).
+- **`links.html`** — Compact, single-column link-in-bio page (all Connect links in one lightweight list — this is the URL to use as an Instagram/social bio link). Like `automation.html`, it is intentionally a standalone URL, matching the design: it is not linked from the nav or Home.
 - **`contact.html`** — LinkedIn / Email / Book-a-call contact cards.
 
 **Shared assets:**
@@ -54,7 +54,7 @@ Legacy aliases (`--bg`, `--cyan`, `--blue`, `--border`, `--text`, `--radius`, �
 
 ## HTML Conventions
 
-**Link card pattern** (Connect section — copy-paste to add a link):
+**Link card pattern** (`links.html` — copy-paste to add a link):
 ```html
 <a href="https://example.com" target="_blank" rel="noopener" class="link-card">
   <img src="assets/images/icon.png" alt="" />
