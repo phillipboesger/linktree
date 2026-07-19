@@ -24,6 +24,7 @@ A multi-page static site sharing one CSS file and two core JS files. There is no
 - **`automation.html`** — n8n / Proxmox homelab showcase cards (external links to the actual tools).
 - **`links.html`** — Compact, single-column link-in-bio page (all Connect links in one lightweight list — this is the URL to use as an Instagram/social bio link). Like `automation.html`, it is intentionally a standalone URL, matching the design: it is not linked from the nav or Home.
 - **`contact.html`** — LinkedIn / Email / Book-a-call contact cards.
+- **`imprint.html`** — Imprint / legal disclosure (`noindex`), linked from every footer's bottom bar. Content ported from digital.boesger.com/imprint — keep the two in sync if the legal details ever change.
 
 **Shared assets:**
 - **`assets/css/style.css`** — All styling for every page. Design tokens (colors, spacing, radii, shadows, motion, typography) are CSS custom properties in `:root`, ported from the Bösger Digital design system (canonical source: colors.boesger.com). Responsive breakpoints: `900px` (nav collapses to a mobile menu, hero/blog grids stack), `640px`/`560px` (spacing and CTA adjustments).
@@ -65,7 +66,7 @@ Legacy aliases (`--bg`, `--cyan`, `--blue`, `--border`, `--text`, `--radius`, �
 </a>
 ```
 
-For links to private/internal services, use `rel="nofollow noopener"` and place them in the footer's "Internal" column (`.footer-pill-link`, alongside the public "Elsewhere" column) instead of the public Connect grid — see the n8n/Proxmox entries. The bottom bar below both columns (`.site-footer-internal` / `.site-footer-internal-inner`) holds only the copyright line and the Imprint link.
+For links to private/internal services, use `rel="nofollow noopener"` and place them in the footer's "Internal" column (`.footer-pill-link`, alongside the public "Elsewhere" column) instead of the public Connect grid — see the n8n/Proxmox entries. The bottom bar below both columns (`.site-footer-internal` / `.site-footer-internal-inner`) holds only the copyright line and the Imprint link (internal, to `imprint.html`).
 
 **Work/portfolio card pattern** (`.glass-card.work-card`): an `<a>` wrapping a `.work-card-media` (icon + status `.badge`) and `.work-card-body` (`h3`, tagline, description, `.tag` chips, "Learn more →" link). Only add cards for things that are actually live/real — this section has previously contained AI-fabricated placeholder products; verify against the real product site or GitHub repo before adding one. Cards for projects with a detail page (see `work/*.html` above) link internally instead of to the external product site.
 
