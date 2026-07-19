@@ -2057,6 +2057,60 @@ a:hover {
   font-weight: 300;
 }
 
+/* ── Ask-AI band ("Frag die KI über mich") ───────────────────────────────── */
+.ask-ai-section {
+  padding-top: 0;
+}
+.ask-ai-band {
+  text-align: center;
+  padding: 36px 32px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(1, 191, 251, 0.08),
+    rgba(15, 125, 255, 0.05)
+  );
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(var(--blur-lg));
+}
+.ask-ai-band h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.ask-ai-desc {
+  margin: 0 auto 22px;
+  max-width: 540px;
+  color: var(--text-body);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.ask-ai-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ask-ai-buttons .btn img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.ask-ai-hint {
+  margin: 14px 0 0;
+  color: var(--success);
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-standard);
+}
+.ask-ai-hint.is-visible {
+  opacity: 1;
+}
+
 /* ── Footer (3-column: brand / elsewhere / internal) ─────────────────────── */
 .site-footer-main.footer-columns {
   align-items: flex-start;

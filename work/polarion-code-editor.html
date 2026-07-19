@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/css/style.css?v=20260719d" rel="stylesheet" />
+    <link href="../assets/css/style.css?v=20260719e" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -264,6 +264,32 @@ POST   /api/config/rename</code></pre>
             </div>
           </div>
         </div>
+
+        <!-- Ask AI -->
+        <section class="section ask-ai-section">
+          <div class="section-inner">
+            <div class="ask-ai-band" data-reveal>
+              <p class="glass-panel-label">Ask AI</p>
+              <h2>Frag die KI über mich</h2>
+              <p class="ask-ai-desc">
+                Lass dir von deinem KI-Assistenten zusammenfassen, wer ich bin,
+                was ich mache und wie du mich erreichst — der Prompt ist schon
+                vorbereitet.
+              </p>
+              <div class="ask-ai-buttons">
+                <a href="https://chatgpt.com/?q=Erz%C3%A4hl%20mir%20etwas%20%C3%BCber%20Phillip%20B%C3%B6sger%20basierend%20auf%20https%3A%2F%2Fboesger.com.%20Fasse%20zusammen%2C%20wer%20die%20Person%20ist%2C%20was%20sie%20macht%20und%20wie%20man%20sie%20erreicht." target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+                  <img src="../assets/images/ai-chatgpt.png" alt="" />ChatGPT</a>
+                <a href="https://claude.ai/new?q=Erz%C3%A4hl%20mir%20etwas%20%C3%BCber%20Phillip%20B%C3%B6sger%20basierend%20auf%20https%3A%2F%2Fboesger.com.%20Fasse%20zusammen%2C%20wer%20die%20Person%20ist%2C%20was%20sie%20macht%20und%20wie%20man%20sie%20erreicht." target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+                  <img src="../assets/images/ai-claude.png" alt="" />Claude</a>
+                <a href="https://www.perplexity.ai/search?q=Erz%C3%A4hl%20mir%20etwas%20%C3%BCber%20Phillip%20B%C3%B6sger%20basierend%20auf%20https%3A%2F%2Fboesger.com.%20Fasse%20zusammen%2C%20wer%20die%20Person%20ist%2C%20was%20sie%20macht%20und%20wie%20man%20sie%20erreicht." target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+                  <img src="../assets/images/ai-perplexity.png" alt="" />Perplexity</a>
+                <button type="button" class="btn btn-secondary btn-md" data-ai-gemini data-ai-prompt="Erzähl mir etwas über Phillip Bösger basierend auf https://boesger.com. Fasse zusammen, wer die Person ist, was sie macht und wie man sie erreicht.">
+                  <img src="../assets/images/ai-gemini.png" alt="" />Gemini</button>
+              </div>
+              <p class="ask-ai-hint" role="status" aria-live="polite">Prompt kopiert – einfach einfügen</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="site-footer">
@@ -308,8 +334,8 @@ POST   /api/config/rename</code></pre>
       </footer>
     </div>
 
-    <script src="../assets/js/network.js?v=20260719d"></script>
-    <script src="../assets/js/site.js?v=20260719d"></script>
+    <script src="../assets/js/network.js?v=20260719e"></script>
+    <script src="../assets/js/site.js?v=20260719e"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();
