@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/css/style.css?v=20260719c" rel="stylesheet" />
+    <link href="../assets/css/style.css?v=20260719e" rel="stylesheet" />
   </head>
   <body>
     <canvas id="network-canvas"></canvas>
@@ -264,6 +264,31 @@ POST   /api/config/rename</code></pre>
             </div>
           </div>
         </div>
+
+        <!-- Ask AI -->
+        <section class="section ask-ai-section">
+          <div class="section-inner">
+            <div class="ask-ai-band" data-reveal>
+              <p class="glass-panel-label">Ask AI</p>
+              <h2>Ask AI about me</h2>
+              <p class="ask-ai-desc">
+                Let your AI assistant sum up who I am, what I do and how to
+                reach me — the prompt is already prepared.
+              </p>
+              <div class="ask-ai-buttons">
+                <a href="https://chatgpt.com/?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+                  <img src="../assets/images/ai-chatgpt.png" alt="" />ChatGPT</a>
+                <a href="https://claude.ai/new?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+                  <img src="../assets/images/ai-claude.png" alt="" />Claude</a>
+                <a href="https://www.perplexity.ai/search?q=Tell%20me%20something%20about%20Phillip%20B%C3%B6sger%20based%20on%20https%3A%2F%2Fboesger.com.%20Summarize%20who%20this%20person%20is%2C%20what%20they%20do%2C%20and%20how%20to%20reach%20them." target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+                  <img src="../assets/images/ai-perplexity.png" alt="" />Perplexity</a>
+                <button type="button" class="btn btn-secondary btn-md" data-ai-gemini data-ai-prompt="Tell me something about Phillip Bösger based on https://boesger.com. Summarize who this person is, what they do, and how to reach them.">
+                  <img src="../assets/images/ai-gemini.png" alt="" />Gemini</button>
+              </div>
+              <p class="ask-ai-hint" role="status" aria-live="polite">Prompt copied – just paste it</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="site-footer">
@@ -302,14 +327,14 @@ POST   /api/config/rename</code></pre>
         <div class="site-footer-internal">
           <div class="site-footer-internal-inner">
             <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
-            <a href="https://digital.boesger.com/imprint/" target="_blank" rel="noopener" class="footer-legal-link">Imprint / Legal Disclosure</a>
+            <a href="../imprint.html" class="footer-legal-link">Imprint / Legal Disclosure</a>
           </div>
         </div>
       </footer>
     </div>
 
-    <script src="../assets/js/network.js?v=20260719c"></script>
-    <script src="../assets/js/site.js?v=20260719c"></script>
+    <script src="../assets/js/network.js?v=20260719e"></script>
+    <script src="../assets/js/site.js?v=20260719e"></script>
     <script>
       document.querySelectorAll(".footer-year").forEach(function (el) {
         el.textContent = new Date().getFullYear();

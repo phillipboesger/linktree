@@ -130,6 +130,27 @@
     });
   }
 
+  // Ask-AI band: Gemini has no prefill URL parameter, so the button copies the
+  // prompt to the clipboard, opens the Gemini app in a new tab and shows a hint.
+  document.querySelectorAll("[data-ai-gemini]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var prompt = btn.getAttribute("data-ai-prompt") || "";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(prompt);
+      }
+      var band = btn.closest(".ask-ai-band");
+      var hint = band && band.querySelector(".ask-ai-hint");
+      if (hint) {
+        hint.classList.add("is-visible");
+        clearTimeout(hint._hideTimer);
+        hint._hideTimer = setTimeout(function () {
+          hint.classList.remove("is-visible");
+        }, 4000);
+      }
+      window.open("https://gemini.google.com/app", "_blank", "noopener");
+    });
+  });
+
   // Media carousel ("see it in action" screenshots/GIFs)
   document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
     var slides = carousel.querySelectorAll(".carousel-slide");
