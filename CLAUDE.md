@@ -87,7 +87,7 @@ If a panel's id should be deep-linkable, add `data-tab-hash="cv"` to its trigger
 
 **Media carousel pattern** (product "see it in action" section): a wrapper with `data-carousel`, one `.carousel-slide` per screenshot/GIF (`.is-active` on the first), and `.carousel-dot` / `.carousel-prev` / `.carousel-next` controls — `site.js` handles the rest.
 
-**Ask-AI band** (`.ask-ai-band`, last section of every page): "Frag die KI über mich" buttons that open ChatGPT / Claude / Perplexity with a prefilled prompt via their `?q=` URL parameter (URL-encoded, baked into the static `href`s — if the prompt text ever changes, regenerate the encoded URLs on **all** pages together). Gemini has no prefill parameter, so its `<button data-ai-gemini data-ai-prompt="...">` is handled by `site.js`: copy the prompt to the clipboard, open gemini.google.com/app in a new tab, and flash the `.ask-ai-hint` line. The block (incl. German copy) is intentionally identical on every page.
+**Ask-AI band** (`.ask-ai-band`, last section of every page): "Ask AI about me" buttons that open ChatGPT / Claude / Perplexity with a prefilled prompt via their `?q=` URL parameter (URL-encoded, baked into the static `href`s — if the prompt text ever changes, regenerate the encoded URLs on **all** pages together). Gemini has no prefill parameter, so its `<button data-ai-gemini data-ai-prompt="...">` is handled by `site.js`: copy the prompt to the clipboard, open gemini.google.com/app in a new tab, and flash the `.ask-ai-hint` line. The block is intentionally identical on every page.
 
 ## Data correctness
 
