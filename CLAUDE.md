@@ -45,7 +45,7 @@ All theme values are in `:root` in `style.css`. Key tokens:
 | `--radius-sm` … `--radius-xl` / `--radius-pill` | Corner radii scale |
 | `--shadow-sm` … `--shadow-xl` / `--glow-accent` | Elevation + cyan glow shadows |
 | `--space-2` … `--space-8` | 4px-base spacing scale |
-| `--container` | Max content width (`1024px`) |
+| `--container` | Max content width (`1120px`, per the design system) |
 | `--font-mono` | Monospace stack (Fira Code / SF Mono) for code blocks and product-name display type |
 | `--text-link` / `--text-link-hover` | Default link color states |
 | `--warning` | Amber status text (e.g. install notes) |
