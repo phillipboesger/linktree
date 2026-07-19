@@ -130,56 +130,6 @@
     });
   }
 
-  // Ask-AI band: Gemini has no prefill URL parameter, so the button copies the
-  // prompt to the clipboard, opens the Gemini app in a new tab and shows a hint.
-  // The copy must complete before the new tab steals focus — an async
-  // clipboard.writeText still in flight is rejected with "Document is not
-  // focused" once window.open switches tabs — so a synchronous
-  // execCommand-based copy runs first, with the async API only as fallback.
-  function copyToClipboard(text) {
-    var ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.top = "-9999px";
-    document.body.appendChild(ta);
-    ta.select();
-    ta.setSelectionRange(0, text.length);
-    var ok = false;
-    try {
-      ok = document.execCommand("copy");
-    } catch (err) {
-      ok = false;
-    }
-    document.body.removeChild(ta);
-    return ok;
-  }
-
-  document.querySelectorAll("[data-ai-gemini]").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var prompt = btn.getAttribute("data-ai-prompt") || "";
-      var band = btn.closest(".ask-ai-band");
-      var hint = band && band.querySelector(".ask-ai-hint");
-      if (hint) {
-        hint.classList.add("is-visible");
-        clearTimeout(hint._hideTimer);
-        hint._hideTimer = setTimeout(function () {
-          hint.classList.remove("is-visible");
-        }, 4000);
-      }
-      var openGemini = function () {
-        window.open("https://gemini.google.com/app", "_blank", "noopener");
-      };
-      if (copyToClipboard(prompt)) {
-        openGemini();
-      } else if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(prompt).then(openGemini, openGemini);
-      } else {
-        openGemini();
-      }
-    });
-  });
-
   // Media carousel ("see it in action" screenshots/GIFs)
   document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
     var slides = carousel.querySelectorAll(".carousel-slide");
