@@ -130,6 +130,48 @@
     });
   }
 
+  // Click-to-copy (Colors page): [data-copy="..."] copies the attribute value,
+  // [data-copy-target="#sel"] copies that element's text. Synchronous
+  // execCommand first — async clipboard writes can be interrupted — then the
+  // async API as fallback. Feedback via a temporary .is-copied class.
+  function copyText(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    var ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (err) {
+      ok = false;
+    }
+    document.body.removeChild(ta);
+    if (!ok && navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text);
+    }
+  }
+
+  document.querySelectorAll("[data-copy], [data-copy-target]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      var target = el.getAttribute("data-copy-target");
+      var text = target
+        ? (document.querySelector(target) || {}).textContent || ""
+        : el.getAttribute("data-copy") || "";
+      if (!text) return;
+      copyText(text.trim());
+      var card = el.closest(".swatch-card") || el;
+      card.classList.add("is-copied");
+      clearTimeout(card._copyTimer);
+      card._copyTimer = setTimeout(function () {
+        card.classList.remove("is-copied");
+      }, 1500);
+    });
+  });
+
   // Media carousel ("see it in action" screenshots/GIFs)
   document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
     var slides = carousel.querySelectorAll(".carousel-slide");
