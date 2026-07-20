@@ -1898,12 +1898,32 @@ a:hover {
 /* ── Colors page ─────────────────────────────────────────────────────────── */
 .swatch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 16px;
   margin-bottom: 32px;
 }
 .swatch-card {
   padding: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: transform var(--dur-base), border-color var(--dur-base);
+}
+.swatch-card:hover {
+  transform: translateY(var(--lift-sm));
+  border-color: var(--border-strong);
+}
+.swatch-card.is-copied::after {
+  content: "Copied ✓";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(52, 216, 122, 0.16);
+  border: 1px solid rgba(52, 216, 122, 0.35);
+  color: var(--success);
+  font-size: 11px;
+  font-weight: 700;
 }
 .swatch-box {
   height: 64px;
@@ -1917,10 +1937,22 @@ a:hover {
   font-size: 14px;
   font-weight: 700;
 }
+.swatch-purpose {
+  margin: 0 4px 6px;
+  color: rgba(195, 222, 245, 0.7);
+  font-size: 12px;
+  line-height: 1.4;
+}
 .swatch-hex {
   margin: 0 4px;
-  color: var(--text-muted);
+  color: var(--accent-glow);
   font-size: 13px;
+  font-family: var(--font-mono);
+}
+.swatch-rgb {
+  margin: 2px 4px 0;
+  color: var(--text-muted);
+  font-size: 12px;
   font-family: var(--font-mono);
 }
 .swatch-label {
@@ -1930,6 +1962,116 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+/* Logo/icon variant tiles */
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.asset-card {
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform var(--dur-base), border-color var(--dur-base);
+}
+.asset-card:hover {
+  transform: translateY(var(--lift-sm));
+  border-color: var(--border-strong);
+}
+.asset-preview {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.asset-preview img {
+  max-height: 100%;
+  max-width: 70%;
+  object-fit: contain;
+}
+.asset-preview.dark-bg {
+  background: #000d1c;
+}
+.asset-preview.light-bg {
+  background: #f4f8fb;
+}
+.asset-preview.cyan-bg {
+  background: var(--accent);
+}
+.asset-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+.asset-name {
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.asset-tag {
+  padding: 2px 9px;
+  border-radius: var(--radius-pill);
+  background: rgba(1, 191, 251, 0.1);
+  border: 1px solid var(--border-default);
+  color: var(--accent-glow);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+/* Usage examples + copyable token block */
+.usage-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.brand-bg-tile {
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 32px;
+  display: block;
+  text-decoration: none;
+}
+.brand-bg-tile img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+.code-copy-btn {
+  margin-left: auto;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(1, 191, 251, 0.1);
+  border: 1px solid var(--border-default);
+  color: var(--accent-glow);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color var(--dur-base), background var(--dur-base);
+}
+.code-copy-btn:hover {
+  border-color: var(--border-strong);
+  background: rgba(15, 40, 80, 0.65);
+}
+.code-copy-btn.is-copied {
+  color: var(--success);
+  border-color: rgba(52, 216, 122, 0.35);
+}
+.code-copy-btn.is-copied::after {
+  content: " ✓";
 }
 
 /* ── Automation page ──────────────────────────────────────────────────────── */
