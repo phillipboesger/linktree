@@ -1,66 +1,83 @@
-# boesger.com — Personal Branding Site
+<div align="center">
+  <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" width="240" />
 
-This repository contains my personal hub/link-tree site: a single static HTML page showcasing what I've built (Work & Portfolio), a blog teaser, and a "Connect" hub centralizing all my other links (projects, social profiles, automation tools, etc.). It replaces the previous simple Linktree-style page — it's intentionally lightweight, dependency‑free, and easy to customize.
+  <h1>boesger.com</h1>
+  <p><strong>More AI, less manual work.</strong></p>
+  <p>Personal site and brand hub for Phillip Bösger — profile, work &amp; portfolio, blog, brand reference, and contact.</p>
 
-> Purpose: A fast, self‑hostable routing hub for my brand — portfolio + every other link, instead of a bare list of buttons. It's deliberately thin: the full story (About Me, CV, Skills, Services) lives on `digital.boesger.com` and is only linked from here, not duplicated.
+  [![Deploy to GitHub Pages](https://github.com/phillipboesger/boesger-website/actions/workflows/updateWebsite.yml/badge.svg)](https://github.com/phillipboesger/boesger-website/actions/workflows/updateWebsite.yml)
+  [![Website](https://img.shields.io/website?url=https%3A%2F%2Fboesger.com&up_message=online&down_message=offline&label=boesger.com)](https://boesger.com)
+  [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-## ✨ Key Features
+  **[Visit boesger.com →](https://boesger.com)**
 
-- 100% static: just `index.html`, one CSS file, two small JS files.
-- No build step, no framework, no Node.js — hand-authored HTML/CSS/vanilla JS.
-- Fast to load + privacy friendly (no analytics or trackers included by default).
-- Sticky nav with scroll-spy, mobile menu, and reveal-on-scroll animation.
-- Sections: Hero, Work & Portfolio, Blog teaser, Connect (all links), Contact.
-- Ambient animated network/constellation background (canvas, no dependencies) or optional alternative snowfall effect.
+  <br />
 
-## 📂 Structure
+  <img src="assets/images/readme-preview.jpg" alt="boesger.com homepage preview" width="800" />
+</div>
+
+## Overview
+
+This repository is the canonical source for `boesger.com`: a fully static, multi-page site with no build system, no package manager, and no JavaScript framework. Every page is hand-authored HTML, styled by a single shared CSS file, and enhanced by a small amount of vanilla JS (navigation, reveal-on-scroll, tabs, modals, carousel). There is nothing to install and nothing to compile — clone it, open a page in a browser, and it renders exactly as it will in production.
+
+Other Bösger properties (`digital.boesger.com`, `polarion.boesger.com`, `colors.boesger.com`, `photography.boesger.com`, product subdomains such as `polarion-mcp.boesger.com`) are separate deployments and are not managed from this repository; they are linked from here as external references.
+
+## Tech Stack
+
+- **HTML5 / CSS3** — hand-authored, no templating engine.
+- **Vanilla JavaScript** — no framework, no bundler, no transpilation step.
+- **GitHub Pages** — static hosting, deployed automatically on every push to `main`.
+- **Cloudflare** — DNS and CDN in front of the custom domain, including a small edge Worker (see `cloudflare/tools-proxy/`) that reverse-proxies select product subdomains under `boesger.com/tools/<slug>`.
+
+## Project Structure
 
 ```
-index.html             # Main page (all sections)
-assets/css/style.css   # Styling + design tokens
-assets/js/network.js   # Animated network/constellation background
-assets/js/site.js      # Nav scroll-spy, mobile menu, reveal-on-scroll
-assets/js/snowfall.js  # (Optional) alternative snowfall animation (currently not loaded)
-assets/images/         # Profile photos, logos, product icons
-assets/gif-readme/     # Demo GIF (legacy / template origin)
-cloudflare/tools-proxy/ # Optional Cloudflare Worker: mirrors product
-                         # subdomains under boesger.com/tools/<slug>
-                         # (separate deploy, see its own README)
+index.html                    Home — hero, work/portfolio teaser, blog teaser, contact CTA
+profile.html                  Profile — overview, CV, skills, working-with-me, about (tabbed)
+work.html                     Full work & portfolio grid
+work/
+  polarion-mcp.html           Project detail page
+  polarion-docker.html        Project detail page
+  polarion-code-editor.html   Project detail page
+  ai-enablement-hub.html      Project detail page
+blog.html                     Blog topic teaser + newsletter CTA
+colors.html                   Complete brand/identity reference (logos, palette, tokens)
+automation.html               n8n / Proxmox homelab showcase
+links.html                    Compact link-in-bio page (social bio link target)
+contact.html                  LinkedIn / email / book-a-call contact cards
+imprint.html                  Imprint / legal disclosure
+privacy.html                  Privacy policy
+
+assets/
+  css/style.css               All styling; design tokens as CSS custom properties in :root
+  js/network.js               Animated particle-network canvas background (every page)
+  js/site.js                  Nav, mobile menu, reveal-on-scroll, tabs, modal, carousel
+  js/snowfall.js              Alternative background animation (currently unused)
+  images/                     Photos, logos, product icons
+  documents/                  Downloadable documents (e.g. CV PDF)
+  gif-readme/                 Legacy demo asset from the original template (unused)
+
+cloudflare/tools-proxy/       Optional Cloudflare Worker; see its own README for setup
+CLAUDE.md                     Detailed architecture and conventions reference for this repo
 ```
 
-## 🔧 Customization Guide
+## Local Development
 
-### 1. Update Profile Photos
+No build step is required.
 
-The hero uses `assets/images/about-image.webp` (in focus) and `assets/images/off-duty.webp` (off duty). Replace the files (keep the same filenames) or update the `src` attributes in `index.html`. Keep images optimized (< ~300 KB) for faster load times.
+- Open any `.html` file directly in a browser, or
+- Serve the folder with any static file server, e.g. `python3 -m http.server`.
 
-### 2. Add / Remove Links
+## Deployment
 
-**Connect section** (public link hub) — each entry follows the link-card pattern documented in `CLAUDE.md`. **Work & Portfolio** — each project is a `.glass-card.work-card` (see `CLAUDE.md` for the pattern). **Footer "Internal" row** — private/self-hosted tools use `rel="nofollow noopener"`.
+Pushing to `main` triggers `.github/workflows/updateWebsite.yml`, which publishes the repository contents to GitHub Pages. The custom domain (`boesger.com`) and DNS/CDN are configured through Cloudflare and the repository's Pages settings.
 
-Duplicate or remove blocks as needed. Keep `alt` text meaningful for accessibility. Only add real, verifiable content — see the "Data correctness" note in `CLAUDE.md`.
+`style.css`, `site.js`, and `network.js` are cached for 4 hours at the edge (and by browsers). Each HTML page references them with a shared `?v=YYYYMMDDx` cache-busting query string — bump that string across every page when any of those three files change, so visitors don't get new markup paired with stale styles or scripts.
 
-### 3. Section Headings
+## Customization
 
-Sections use a `.kicker` + `<h2>` + intro `<p>` inside `.section-head`. Add new `<section class="section" id="...">` blocks and a matching nav pill in both the desktop and mobile nav to add a new page section.
+For the full architecture reference, design-token table, and copy-paste patterns for links, work cards, section headings, tabs, and the media carousel, see [`CLAUDE.md`](./CLAUDE.md).
 
-### 4. Icons & Images
+## License
 
-All images live in `assets/images/`. Reuse existing file names to avoid changing HTML, or update the `src` attributes. Recommended formats: PNG or WEBP with transparent background when suitable. Maintain consistent aspect ratios so cards feel balanced.
-
-### 5. Styling
-
-Adjust global colors, spacing and typography via the CSS custom properties in `:root` in `assets/css/style.css` (see `CLAUDE.md` for the token table). If you introduce additional utility classes, stay consistent with existing naming (`hero-*`, `work-card-*`, `link-card`, etc.).
-
-## 🚀 Usage / Deployment
-
-Because this is plain static content you can:
-
-- Open `index.html` directly in a browser (double‑click locally).
-- Host on any static platform (GitHub Pages, Netlify, Vercel, Cloudflare Pages, S3, your own Nginx, etc.).
-
-No build step, no dependencies, no Node.js required.
-
-## 📄 License
-
-Released under the MIT License. See `LICENSE` for details.
+Released under the MIT License. See [`LICENSE`](./LICENSE) for details.
