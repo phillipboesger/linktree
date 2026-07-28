@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta
+      name="description"
+      content="Second Brain — a self-hosted personal knowledge and automation system by Phillip Bösger, connecting his own Google Calendar, Drive and Gmail into one searchable personal assistant."
+    />
+    <link rel="shortcut icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/boesger-digital.png" />
+    <link rel="icon" href="assets/images/boesger-digital.png" type="image/webp" />
+    <title>Second Brain — Personal Knowledge &amp; Automation System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css?v=20260720a" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="network-canvas"></canvas>
+
+    <div class="page">
+      <header class="site-header" id="site-header">
+        <div class="site-header-inner">
+          <a href="index.html" class="brand-logo-link">
+            <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+          </a>
+          <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="index.html" class="nav-pill">Home</a>
+            <a href="profile.html" class="nav-pill">Profile</a>
+            <a href="work.html" class="nav-pill">Projects</a>
+            <a href="blog.html" class="nav-pill">Blog</a>
+          </nav>
+          <div class="nav-cta">
+            <a href="contact.html" class="btn btn-primary btn-sm">Get in touch</a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+          <a href="index.html" class="nav-pill">Home</a>
+          <a href="profile.html" class="nav-pill">Profile</a>
+          <a href="work.html" class="nav-pill">Projects</a>
+          <a href="blog.html" class="nav-pill">Blog</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="page-head" data-reveal>
+          <span class="kicker">Personal Application</span>
+          <h1>Second Brain</h1>
+          <p style="max-width: 720px; margin: 14px auto 0; color: rgba(195, 222, 245, 0.85); font-size: 16px; line-height: 1.75">
+            Second Brain is a self-hosted personal knowledge and automation
+            system built and operated by Phillip Bösger. It brings his own
+            notes, documents, emails and calendar entries together into a
+            single searchable knowledge base, and automates his personal
+            day-to-day organization.
+          </p>
+        </div>
+
+        <section class="section" style="padding-top: 24px">
+          <div class="section-inner">
+            <div class="glass-panel" style="padding: 28px 30px; margin-bottom: 18px" data-reveal>
+              <h3 class="subsection-title" style="font-size: 19px">What Second Brain Does</h3>
+              <ul style="margin: 0; padding-left: 1.2em; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.8">
+                <li>
+                  <strong>Collects</strong> personal documents, notes, emails
+                  and web sources into one private knowledge base.
+                </li>
+                <li>
+                  <strong>Searches</strong> across all of that content in
+                  natural language, so past decisions, notes and conversations
+                  can be found again in seconds.
+                </li>
+                <li>
+                  <strong>Summarizes</strong> the day and the week — upcoming
+                  calendar entries, open threads and things that still need a
+                  reply.
+                </li>
+                <li>
+                  <strong>Drafts</strong> replies to Phillip's own emails as
+                  Gmail drafts, which are always reviewed and sent by him
+                  manually.
+                </li>
+              </ul>
+            </div>
+
+            <div class="glass-panel" style="padding: 28px 30px; margin-bottom: 18px" data-reveal>
+              <h3 class="subsection-title" style="font-size: 19px">Who Uses It</h3>
+              <p style="margin: 0; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.7">
+                Second Brain is a <strong>single-user, personal
+                application</strong>. It is used exclusively by Phillip Bösger
+                and connects only to <strong>his own</strong> Google account.
+                It is not offered to, sold to, or accessible by third parties,
+                and there is no sign-up: the only account it ever connects to
+                is the developer's own.
+              </p>
+            </div>
+
+            <div class="glass-panel" style="padding: 28px 30px; margin-bottom: 18px" data-reveal>
+              <h3 class="subsection-title" style="font-size: 19px">Google Account Data It Uses</h3>
+              <p style="margin: 0 0 14px; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.7">
+                Second Brain requests access to the following Google services,
+                each for a single, clearly defined purpose:
+              </p>
+              <ul style="margin: 0 0 14px; padding-left: 1.2em; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.8">
+                <li>
+                  <strong>Google Calendar</strong> — to read upcoming
+                  appointments for the daily and weekly overview, and to create
+                  personal events.
+                </li>
+                <li>
+                  <strong>Google Drive</strong> — to read personal documents
+                  and notes so they become searchable in the knowledge base.
+                </li>
+                <li>
+                  <strong>Gmail</strong> — to read messages for the same
+                  searchable overview, and to create drafts of Phillip's own
+                  replies.
+                </li>
+              </ul>
+              <p style="margin: 0; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.7">
+                All data retrieved through the Google APIs is stored and
+                processed exclusively on self-operated infrastructure. It is
+                <strong>never shared with third parties, never sold, and never
+                used for advertising</strong>. Use of data obtained through the
+                Google Workspace APIs complies with the
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener"
+                  >Google API Services User Data Policy</a
+                >, including its Limited Use requirements. Details are in the
+                <a href="privacy.html">Privacy Policy</a>.
+              </p>
+            </div>
+
+            <div class="glass-panel" style="padding: 28px 30px; margin-bottom: 18px" data-reveal>
+              <h3 class="subsection-title" style="font-size: 19px">How It Is Built</h3>
+              <p style="margin: 0; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.7">
+                Second Brain runs entirely on Phillip's own infrastructure: a
+                self-hosted workflow engine for the automations and a
+                self-hosted database with vector search for the knowledge base.
+                There is no public web application and no multi-tenant service
+                behind it — the system is private by design.
+              </p>
+            </div>
+
+            <div class="glass-panel" style="padding: 28px 30px" data-reveal>
+              <h3 class="subsection-title" style="font-size: 19px">Developer &amp; Contact</h3>
+              <p style="margin: 0; color: rgba(195, 222, 245, 0.85); font-size: 15px; line-height: 1.7">
+                Phillip Bösger · Bösger Digital<br />
+                Bachstraße 5 i, 08412 Werdau, Germany<br /><br />
+                E-Mail: <a href="mailto:digital@boesger.com">digital@boesger.com</a><br />
+                <a href="privacy.html">Privacy Policy</a> ·
+                <a href="imprint.html">Imprint / Legal Disclosure</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer-main footer-columns">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo-link">
+              <img src="assets/images/boesger-digital-wordmark.png" alt="Bösger Digital" class="brand-logo" />
+            </a>
+            <p class="footer-tagline">More AI, less manual work.</p>
+          </div>
+          <div class="footer-col">
+            <p class="footer-col-label">Elsewhere</p>
+            <div class="footer-pill-row">
+              <a href="https://www.linkedin.com/in/phillip-boesger-90691215a/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/linkedin.png" alt="" />LinkedIn</a>
+              <a href="https://github.com/phillipboesger" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/github.png" alt="" />GitHub</a>
+              <a href="https://photography.boesger.com" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/logo_photography.png" alt="" />Photography</a>
+              <a href="https://www.instagram.com/phillip.bo/" target="_blank" rel="noopener" class="footer-pill-link">
+                <img src="assets/images/instagram.png" alt="" />Instagram</a>
+            </div>
+          </div>
+          <div class="footer-col align-end">
+            <p class="footer-col-label">Internal</p>
+            <div class="footer-pill-row">
+              <a href="https://n8n.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/n8n.png" alt="" />n8n</a>
+              <a href="http://proxmox.boesger.com" target="_blank" rel="nofollow noopener" class="footer-pill-link">
+                <img src="assets/images/proxmox-light.png" alt="" />Proxmox</a>
+              <a href="colors.html" class="footer-pill-link">
+                <img src="assets/images/colors.png" alt="" />Colors</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer-internal">
+          <div class="site-footer-internal-inner">
+            <p class="footer-copy">© <span class="footer-year"></span> Phillip Bösger · Bösger Digital · boesger.com</p>
+            <a href="imprint.html" class="footer-legal-link">Imprint / Legal Disclosure</a>
+            <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assets/js/network.js?v=20260720a"></script>
+    <script src="assets/js/site.js?v=20260720a"></script>
+    <script>
+      document.querySelectorAll(".footer-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
